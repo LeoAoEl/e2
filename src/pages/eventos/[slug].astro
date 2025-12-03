@@ -1,0 +1,100 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+import Section from '../../components/Section';
+import { getCollection, type CollectionEntry } from 'astro:content';
+
+export async function getStaticPaths() {
+  const events = await getCollection('eventos');
+  return events.map((event: CollectionEntry<'eventos'>) => ({
+    params: { slug: event.slug },
+    props: { event },
+  }));
+}
+
+const { event } = Astro.props as { event: any };
+const { Content } = await event.render();
+const isUpcoming = event.data.date >= new Date();
+---
+
+<ContentLayout title={`${event.data.title} - Eventos E2`} description={event.data.description}>
+  <div class="relative w-full h-[60vh] min-h-[500px]">
+    <div class="absolute inset-0">
+      <img
+        src={typeof event.data.image === 'string' ? event.data.image : event.data.image.src}
+        alt={event.data.title}
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-linear-to-t from-black via-black/50 to-transparent"></div>
+    </div>
+    <div class="relative z-10 container mx-auto px-4 h-full flex flex-col justify-end pb-16 items-center text-center text-white">
+      <a href="/eventos" onclick="if(history.length > 1){event.preventDefault(); history.back();}" class="absolute top-24 left-4 md:left-8 text-white/80 hover:text-white flex items-center gap-2 transition-colors bg-black/20 hover:bg-black/40 px-4 py-2 rounded-full backdrop-blur-sm z-20">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="m15 18-6-6 6-6"/></svg>
+        Volver
+      </a>
+      <div class="max-w-4xl w-full">
+        <div class="flex flex-wrap gap-4 mb-6 justify-center">
+          <span class="bg-secondary text-white px-4 py-2 rounded-full font-bold shadow-lg">
+            {event.data.date.toLocaleDateString('es-MX', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
+          </span>
+          <span class="bg-white/20 backdrop-blur-md text-white px-4 py-2 rounded-full font-semibold border border-white/30">
+            📍 {event.data.location || 'Online'}
+          </span>
+        </div>
+        <h1 
+          class="text-4xl md:text-6xl font-bold mb-6 leading-tight"
+          transition:name={event.data.title}
+        >
+          {event.data.title}
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-200 max-w-2xl mx-auto">
+          {event.data.description}
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container mx-auto px-4 py-16 grid grid-cols-1 lg:grid-cols-3 gap-12">
+    <div class="lg:col-span-2">
+      <article class="prose prose-lg dark:prose-invert max-w-none">
+        <Content />
+      </article>
+    </div>
+
+    <div class="lg:col-span-1">
+      <div class="sticky top-24 bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700">
+        <h3 class="text-2xl font-bold mb-6 text-gray-900 dark:text-white">
+          {isUpcoming ? 'Reserva tu lugar' : 'Evento Finalizado'}
+        </h3>
+        
+        {isUpcoming ? (
+          <div class="space-y-6">
+            <p class="text-gray-600 dark:text-gray-300">
+              No te pierdas esta oportunidad de aprender y crecer con nosotros.
+            </p>
+            <a
+              href="/contacto"
+              class="block w-full text-center px-6 py-4 bg-primary text-white font-bold rounded-xl hover:bg-primary-700 transition-all shadow-lg hover:shadow-xl hover:scale-105"
+            >
+              Registrarme Ahora
+            </a>
+            <p class="text-xs text-center text-gray-500">
+              Cupo limitado. Registro requerido.
+            </p>
+          </div>
+        ) : (
+          <div class="space-y-6">
+            <p class="text-gray-600 dark:text-gray-300">
+              Este evento ya se llevó a cabo. Suscríbete a nuestro newsletter para enterarte de los próximos.
+            </p>
+            <a
+              href="/contacto"
+              class="block w-full text-center px-6 py-4 bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white font-bold rounded-xl hover:bg-gray-300 dark:hover:bg-gray-600 transition-all"
+            >
+              Contactar
+            </a>
+          </div>
+        )}
+      </div>
+    </div>
+  </div>
+</ContentLayout>

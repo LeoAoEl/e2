@@ -1,0 +1,84 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero';
+import Section from '../components/Section';
+import ServiceCard from '../components/ServiceCard';
+import Slider from '../components/Slider';
+import Form from '../components/Form';
+import { sliderData } from '../data/sliderData';
+import HomeVideo from '../assets/videos/Home.mp4';
+---
+
+<Layout title="Inicio - E2STRATEGIAS PATRIMONIALES" description="Bienvenido a E2STRATEGIAS PATRIMONIALES">
+	<Hero
+		client:load
+		title="E2STRATEGIAS PATRIMONIALES"
+		subtitle="Déjanos hacerte la vida más fácil"
+		ctaText="Conoce Más"
+		ctaLink="que-hacemos"
+		imageSrc="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1920"
+	/>
+
+	<Section
+		client:load
+		title="Nuestros Servicios"
+		subtitle="Ofrecemos soluciones personalizadas para cada necesidad"
+		background="dark"
+	>
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+			<ServiceCard
+				client:visible
+				title="Innovación"
+				description="Desarrollamos soluciones tecnológicas de vanguardia que impulsan tu negocio hacia el futuro."
+				iconType="lightbulb"
+				delay={0}
+			/>
+			<ServiceCard
+				client:visible
+				title="Colaboración"
+				description="Trabajamos en equipo contigo para lograr los mejores resultados posibles."
+				iconType="users"
+				delay={0.1}
+			/>
+			<ServiceCard
+				client:visible
+				title="Resultados"
+				description="Medimos el éxito con datos concretos y mejoramos continuamente."
+				iconType="chart"
+				delay={0.2}
+			/>
+		</div>
+	</Section>
+	<Slider
+		client:visible
+		videoSrc={HomeVideo}
+		slides={sliderData}
+	/>
+
+	<!-- Seccion por qué elegirnos -->
+	<Section
+		client:load
+		title="¿Por Qué Elegirnos?"
+		subtitle="Experiencia, dedicación y resultados comprobados"
+		background="light"
+	>
+		<div class="max-w-4xl mx-auto text-center">
+			<p class="text-lg text-gray-600 dark:text-gray-300 mb-8">
+				Con años de experiencia en el sector, nos hemos consolidado como líderes en soluciones digitales.
+				Nuestro compromiso es brindarte servicios de la más alta calidad, adaptados a tus necesidades específicas.
+			</p>
+			<a
+				href="/quienes-somos"
+				class="inline-block bg-primary hover:bg-primary-700 text-white px-8 py-4 rounded-full font-semibold transition-all hover:scale-105 shadow-lg"
+			>
+				Conoce Nuestro Equipo
+			</a>
+		</div>
+	</Section>
+	<Form client:visible />
+
+	</Section>
+
+
+	
+</Layout>

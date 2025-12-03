@@ -1,0 +1,14 @@
+---
+import RootLayout from './RootLayout.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const props = Astro.props;
+---
+
+<RootLayout {...props}>
+	<slot />
+</RootLayout>

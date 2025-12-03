@@ -1,0 +1,80 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero';
+import Section from '../components/Section';
+import ContactForm from '../components/ContactForm';
+import { HiCalendar, HiClock, HiVideoCamera } from 'react-icons/hi';
+import Form from '../components/Form';
+---
+
+<Layout title="Agenda una Cita - E2STRATEGIAS PATRIMONIALES" description="Programa una reunión con nuestro equipo">
+	<Hero
+		client:load
+		title="Agenda tu  Cita"
+		subtitle="Agenda una cita personalizada con el equipo E2 que se acomode exactamente a lo que buscas"
+		imageSrc="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1920"
+	/>
+
+	<Section
+		client:load
+		title="¿Cómo Funciona?"
+		subtitle="Proceso simple en 3 pasos"
+		background="light"
+	>
+		<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+			<div class="text-center">
+				<div class="inline-flex items-center justify-center w-16 h-16 bg-blue-100 dark:bg-blue-900 rounded-full mb-4">
+					<HiCalendar client:load size={32} className="text-primary dark:text-primary-500" />
+				</div>
+				<h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">1. Completa el Formulario</h3>
+				<p class="text-gray-600 dark:text-gray-300">
+					Cuéntanos sobre tu proyecto y necesidades.
+				</p>
+			</div>
+			<div class="text-center">
+				<div class="inline-flex items-center justify-center w-16 h-16 bg-blue-100 dark:bg-blue-900 rounded-full mb-4">
+					<HiClock client:load size={32} className="text-primary dark:text-primary-500" />
+				</div>
+				<h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">2. Confirmación</h3>
+				<p class="text-gray-600 dark:text-gray-300">
+					Recibirás una confirmación en menos de 24 horas.
+				</p>
+			</div>
+			<div class="text-center">
+				<div class="inline-flex items-center justify-center w-16 h-16 bg-blue-100 dark:bg-blue-900 rounded-full mb-4">
+					<HiVideoCamera client:load size={32} className="text-primary dark:text-primary-500" />
+				</div>
+				<h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">3. Reunión</h3>
+				<p class="text-gray-600 dark:text-gray-300">
+					Nos reunimos virtualmente o en persona.
+				</p>
+			</div>
+		</div>
+	</Section>
+
+	<Form client:load />
+
+	<Section
+		client:load
+		title="Horarios de Atención"
+		subtitle="Estamos disponibles cuando lo necesites"
+		background="light"
+	>
+		<div class="max-w-2xl mx-auto bg-white dark:bg-gray-800 rounded-xl shadow-xl p-8">
+			<div class="space-y-4">
+				<div class="flex justify-between border-b border-gray-200 dark:border-gray-700 pb-3">
+					<span class="font-semibold text-gray-900 dark:text-white">Lunes - Viernes</span>
+					<span class="text-gray-600 dark:text-gray-300">9:00 AM - 6:00 PM</span>
+				</div>
+				<div class="flex justify-between border-b border-gray-200 dark:border-gray-700 pb-3">
+					<span class="font-semibold text-gray-900 dark:text-white">Sábado</span>
+					<span class="text-gray-600 dark:text-gray-300">10:00 AM - 2:00 PM</span>
+				</div>
+				<div class="flex justify-between">
+					<span class="font-semibold text-gray-900 dark:text-white">Domingo</span>
+					<span class="text-gray-600 dark:text-gray-300">Cerrado</span>
+				</div>
+			</div>
+		</div>
+	</Section>
+</Layout>

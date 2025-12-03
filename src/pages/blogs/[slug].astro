@@ -1,0 +1,75 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+import Section from '../../components/Section';
+import { getCollection, type CollectionEntry } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post: CollectionEntry<'blog'>) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props as { post: any };
+const { Content } = await post.render();
+---
+
+<ContentLayout title={`${post.data.title} - Blog E2`} description={post.data.description}>
+  <div class="relative w-full h-[50vh] min-h-[400px]">
+    <div class="absolute inset-0">
+      <img
+        src={typeof post.data.image === 'string' ? post.data.image : post.data.image.src}
+        alt={post.data.title}
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-black/60"></div>
+    </div>
+    <div class="relative z-10 container mx-auto px-4 h-full flex flex-col justify-center items-center text-center text-white">
+      <a href="/blog" onclick="if(history.length > 1){event.preventDefault(); history.back();}" class="absolute top-8 left-4 md:left-8 text-white/80 hover:text-white flex items-center gap-2 transition-colors bg-black/20 hover:bg-black/40 px-4 py-2 rounded-full backdrop-blur-sm">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="m15 18-6-6 6-6"/></svg>
+        Volver
+      </a>
+      <span class="text-primary-400 font-semibold mb-4 text-lg">
+        {post.data.date.toLocaleDateString('es-MX', { year: 'numeric', month: 'long', day: 'numeric' })}
+      </span>
+      <h1 
+        class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 max-w-4xl"
+        transition:name={post.data.title}
+      >
+        {post.data.title}
+      </h1>
+      <div class="flex items-center justify-center space-x-4">
+        <div class="w-12 h-12 rounded-full bg-primary-500 flex items-center justify-center text-xl font-bold">
+          {post.data.author.charAt(0)}
+        </div>
+        <div class="text-left">
+          <p class="font-semibold text-lg">{post.data.author}</p>
+          <p class="text-gray-300 text-sm">Autor</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <article class="container mx-auto px-4 py-16 max-w-4xl">
+    <div class="prose prose-lg dark:prose-invert max-w-none">
+      <Content />
+    </div>
+  </article>
+
+  <Section
+    client:load
+    title="¿Te interesó este tema?"
+    subtitle="Contáctanos para una asesoría personalizada"
+    background="light"
+  >
+    <div class="text-center">
+      <a
+        href="/contacto"
+        class="inline-block px-8 py-4 bg-primary text-white font-bold rounded-full hover:bg-primary-700 transition-all shadow-lg hover:shadow-xl hover:scale-105"
+      >
+        Hablar con un experto
+      </a>
+    </div>
+  </Section>
+</ContentLayout>

@@ -1,0 +1,77 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero';
+import Section from '../components/Section';
+import Card from '../components/Card';
+import Form from '../components/Form';
+---
+
+<Layout title="Qué Hacemos - E2STRATEGIAS PATRIMONIALES" description="Conoce nuestros servicios y soluciones">
+	<Hero
+		client:load
+		title="Qué Hacemos"
+		subtitle="Estrategias para disfrutar y tomar control de tu vida."
+		imageSrc="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1920"
+	/>
+
+	<Section
+		client:load
+		title="Con un proceso totalmente humano"
+		background="light"
+	>
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+			<Card
+				client:visible
+				title="Identifica tu punto de partida"
+				description="¿Cuál es el primer paso para crear un negocio? No es tan difícil como crees."
+				delay={0}
+			/>
+			<Card
+				client:visible
+				title="Hacemos una junta personalizada"
+				description="Haz realidad esas ideas geniales que tienes en la cabeza."
+				delay={0.1}
+			/>
+			<Card
+				client:visible
+				title="Encontramos tu mejor estrategia"
+				description="Aprende a presentarte y mostrar tus ideas con confianza."
+				delay={0.2}
+			/>
+			<Card
+				client:visible
+				title="Te ayudamos en tu vida"
+				description="Derriba muros para hacer que tu pequeña empresa se convierta en un imperio."
+				delay={0.3}
+			/>
+		</div>
+	</Section>
+
+	<Section
+		client:load
+		title="Te ayudamos con cualquiera de tus necesidades"
+		background="dark"
+	>
+		<div class="max-w-4xl mx-auto space-y-8">
+			<div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+				<h3 class="text-2xl font-bold mb-3 text-primary dark:text-primary-500">Seguros de vida</h3>
+				<p class="text-gray-600 dark:text-gray-300">
+				Recibe consejos de expertos sobre cómo empezar, una lista de control para tu primer año de negocios y útiles enlaces de seguimiento.
+				</p>
+			</div>
+			<div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+				<h3 class="text-2xl font-bold mb-3 text-primary dark:text-primary-500">Seguros de muerte</h3>
+				<p class="text-gray-600 dark:text-gray-300">
+					Acceso mensual a nuestra biblioteca creciente de clases en línea, cursos de formación, eventos especiales y sesiones individuales de asesoramiento.
+				</p>
+			</div>
+			<div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+				<h3 class="text-2xl font-bold mb-3 text-primary dark:text-primary-500">Seguros por accidente</h3>
+				<p class="text-gray-600 dark:text-gray-300">
+					Acceso anual a nuestra biblioteca creciente de clases en línea, cursos de formación, eventos especiales y sesiones individuales de asesoramiento.
+				</p>
+			</div>
+		</div>
+	</Section>
+	<Form client:visible />
+</Layout>

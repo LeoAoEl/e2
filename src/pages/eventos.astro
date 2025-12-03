@@ -1,0 +1,63 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero';
+import Section from '../components/Section';
+import PostCard from '../components/PostCard.astro';
+import { getCollection, type CollectionEntry } from 'astro:content';
+
+const events = await getCollection('eventos');
+const now = new Date();
+const upcomingEvents: CollectionEntry<'eventos'>[] = events.filter((e: CollectionEntry<'eventos'>) => e.data.date >= now).sort((a: CollectionEntry<'eventos'>, b: CollectionEntry<'eventos'>) => a.data.date.valueOf() - b.data.date.valueOf());
+const pastEvents: CollectionEntry<'eventos'>[] = events.filter((e: CollectionEntry<'eventos'>) => e.data.date < now).sort((a: CollectionEntry<'eventos'>, b: CollectionEntry<'eventos'>) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<Layout title="Eventos - E2STRATEGIAS PATRIMONIALES" description="Próximos eventos y actividades">
+	<Hero
+		client:load
+		title="Eventos"
+		subtitle="Únete a nuestras actividades y talleres"
+		imageSrc="https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?auto=compress&cs=tinysrgb&w=1920"
+	/>
+
+	<Section
+		client:load
+		title="Próximos Eventos"
+		subtitle="No te pierdas nuestras actividades"
+		background="light"
+	>
+		<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+			{
+				upcomingEvents.map((event, index) => (
+					<PostCard
+						title={event.data.title}
+						description={event.data.description}
+						image={event.data.image}
+						link={`/eventos/${event.slug}`}
+						delay={index * 0.1}
+					/>
+				))
+			}
+		</div>
+	</Section>
+
+	<Section
+		client:load
+		title="Eventos Pasados"
+		subtitle="Revive los mejores momentos"
+		background="dark"
+	>
+		<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+			{
+				pastEvents.map((event, index) => (
+					<PostCard
+						title={event.data.title}
+						description={event.data.description}
+						image={event.data.image}
+						link={`/eventos/${event.slug}`}
+						delay={index * 0.1}
+					/>
+				))
+			}
+		</div>
+	</Section>
+</Layout>

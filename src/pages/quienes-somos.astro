@@ -1,0 +1,87 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero';
+import Section from '../components/Section';
+import Card from '../components/Card';
+---
+
+<Layout title="Quiénes Somos - E2STRATEGIAS PATRIMONIALES" description="Conoce a nuestro equipo y nuestra historia">
+	<Hero
+		client:load
+		title="Quiénes Somos"
+		subtitle="Somos 2 Expertos en estrategias patrimoniales"
+		imageSrc="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1920"
+	/>
+
+	<Section
+		client:load
+		title="Nuestra Historia"
+		subtitle="Más de 10 años transformando ideas en realidad"
+		background="light"
+	>
+		<div class="max-w-4xl mx-auto">
+			<p class="text-lg text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+				Fundada en 2014, nuestra empresa nació con la visión de democratizar el acceso a soluciones
+				tecnológicas de calidad. A lo largo de los años, hemos crecido de un equipo de 3 personas
+				a más de 50 profesionales dedicados.
+			</p>
+			<p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+				Hoy en día, somos reconocidos como líderes en desarrollo web y móvil, habiendo trabajado
+				con más de 200 clientes en diversos sectores. Nuestro compromiso con la excelencia y la
+				innovación nos impulsa a superar constantemente las expectativas.
+			</p>
+		</div>
+	</Section>
+
+	<Section
+		client:load
+		title="Nuestros Valores"
+		subtitle="Los pilares que guían nuestro trabajo"
+		background="dark"
+	>
+		<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+			<Card
+				client:visible
+				title="Excelencia"
+				description="Nos esforzamos por entregar productos de la más alta calidad en cada proyecto."
+				delay={0}
+			/>
+			<Card
+				client:visible
+				title="Integridad"
+				description="Actuamos con honestidad y transparencia en todas nuestras relaciones."
+				delay={0.1}
+			/>
+			<Card
+				client:visible
+				title="Innovación"
+				description="Buscamos constantemente nuevas formas de resolver problemas y crear valor."
+				delay={0.2}
+			/>
+		</div>
+	</Section>
+
+	<Section
+		client:load
+		title="Nuestro Equipo"
+		subtitle="Profesionales comprometidos con tu éxito"
+		background="light"
+	>
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+			<Card
+				client:visible
+				title="Vero Elizondo"
+				description="CEO & Fundador"
+				image="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400"
+				delay={0}
+			/>
+			<Card
+				client:visible
+				title="Rafael Esquer"
+				description="Directora de Tecnología"
+				image="https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg?auto=compress&cs=tinysrgb&w=400"
+				delay={0.1}
+			/>
+		</div>
+	</Section>
+</Layout>
