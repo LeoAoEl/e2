@@ -11,7 +11,7 @@ const upcomingEvents: CollectionEntry<'eventos'>[] = events.filter((e: Collectio
 const pastEvents: CollectionEntry<'eventos'>[] = events.filter((e: CollectionEntry<'eventos'>) => e.data.date < now).sort((a: CollectionEntry<'eventos'>, b: CollectionEntry<'eventos'>) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 
-<Layout title="Eventos - E2STRATEGIAS PATRIMONIALES" description="Próximos eventos y actividades">
+<Layout title="Eventos - E2TRATEGIAS PATRIMONIALES" description="Próximos eventos y actividades">
 	<Hero
 		client:load
 		title="Eventos"

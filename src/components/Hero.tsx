@@ -7,6 +7,7 @@ interface HeroProps {
   ctaText?: string;
   ctaLink?: string;
   imageSrc?: string;
+  showButton?: boolean;
 }
 
 export default function Hero({
@@ -15,6 +16,7 @@ export default function Hero({
   ctaText,
   ctaLink,
   imageSrc,
+  showButton = false,
 }: HeroProps) {
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
@@ -34,9 +36,31 @@ export default function Hero({
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 drop-shadow-lg"
+          className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 drop-shadow-lg flex justify-center"
         >
-          {title}
+          <motion.div
+            className="relative inline-block"
+            initial="rest"
+            animate="highlight"
+          >
+            <motion.span
+              variants={{
+                rest: { color: "#ffffff" },
+                highlight: { color: "#f4b620" },
+              }}
+              transition={{ duration: 0.5, delay: 1.2 }}
+            >
+              {title}
+            </motion.span>
+            <motion.div
+              className="absolute left-0 bottom-0 h-[4px] bg-secondary"
+              variants={{
+                rest: { width: 0, opacity: 0 },
+                highlight: { width: "100%", opacity: 1 },
+              }}
+              transition={{ duration: 0.5, ease: "easeInOut", delay: 1.2 }}
+            />
+          </motion.div>
         </motion.h1>
 
         <motion.p
@@ -53,6 +77,7 @@ export default function Hero({
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
+            className="flex flex-col md:flex-row gap-4 justify-center items-center"
           >
             <a
               href={ctaLink}
@@ -61,6 +86,15 @@ export default function Hero({
               {ctaText}
               <HiArrowRight size={20} />
             </a>
+
+            {showButton && (
+              <a
+                href="/contacto#formulario-contacto"
+                className="px-8 py-4 cursor-pointer text-lg bg-secondary text-white font-bold rounded-full hover:bg-secondary-600 transition-all shadow-lg hover:shadow-xl hover:scale-105"
+              >
+                Agenda una Cita
+              </a>
+            )}
           </motion.div>
         )}
       </div>

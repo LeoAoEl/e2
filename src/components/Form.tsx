@@ -12,7 +12,7 @@ export default function Form() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission logic here
+    // !: Handle form submission logic here
     console.log(formData);
     alert("¡Gracias por contactarnos!");
   };
@@ -26,6 +26,7 @@ export default function Form() {
 
   return (
     <div
+      id="formulario-contacto"
       className="relative w-full py-20 bg-fixed bg-cover bg-center"
       style={{
         backgroundImage:

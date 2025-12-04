@@ -7,12 +7,12 @@ export const sliderData = [
   {
     title:
       "Tenemos más de 20 años de experiencia y cientos de clientes felices",
-    buttonText: "Nuestros Servicios",
-    buttonRef: "/servicios",
+    buttonText: "Quiénes Somos",
+    buttonRef: "/quienes-somos",
   },
   {
     title: "Agenda tu asesoría gratuita hoy mismo",
     buttonText: "Contáctanos",
-    buttonRef: "/contacto",
+    buttonRef: "/contacto#formulario-contacto",
   },
 ];
