@@ -1,0 +1,57 @@
+---
+import { principios } from "../../data/historia";
+import { HiLightBulb, HiClock, HiUserGroup } from "react-icons/hi";
+---
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+  <div
+    class="md:col-span-2 bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300 flex flex-col md:flex-row items-center md:items-start text-center md:text-left gap-8"
+  >
+    <div
+      class="shrink-0 w-20 h-20 bg-primary-100 dark:bg-primary-900/50 rounded-full flex items-center justify-center text-primary dark:text-primary-400"
+    >
+      <HiLightBulb client:visible size={40} />
+    </div>
+
+    <div class="flex flex-col justify-center">
+      <h3 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
+        El Principio
+      </h3>
+      <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-lg">
+        {principios.elPrincipio}
+      </p>
+    </div>
+  </div>
+
+  <div
+    class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300 flex flex-col items-center text-center h-full"
+  >
+    <div
+      class="w-16 h-16 bg-secondary-100 dark:bg-secondary-900/30 rounded-full flex items-center justify-center mb-6 text-secondary"
+    >
+      <HiClock client:visible size={32} />
+    </div>
+    <h3 class="text-xl font-bold mb-4 text-gray-900 dark:text-white">
+      El Presente
+    </h3>
+    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+      {principios.elPresente}
+    </p>
+  </div>
+
+  <div
+    class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300 flex flex-col items-center text-center h-full"
+  >
+    <div
+      class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mb-6 text-blue-500 dark:text-blue-400"
+    >
+      <HiUserGroup client:visible size={32} />
+    </div>
+    <h3 class="text-xl font-bold mb-4 text-gray-900 dark:text-white">
+      Tu Futuro
+    </h3>
+    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+      {principios.tuFuturo}
+    </p>
+  </div>
+</div>

@@ -1,6 +1,6 @@
 ---
 name: "Rafael Esquer"
-description: "Director de Tecnología"
+description: "CEO & Fundador"
 image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400"
 ---
 

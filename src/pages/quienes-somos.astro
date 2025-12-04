@@ -1,90 +1,85 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Hero from '../components/Hero';
-import Section from '../components/Section';
-import Card from '../components/Card';
-import { getCollection } from 'astro:content';
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero";
+import Section from "../components/Section";
+import Card from "../components/Card";
+import { getCollection } from "astro:content";
+import Principios from "../components/quienes-somos/Principios.astro";
+import History from "../components/quienes-somos/History.astro";
+import Values from "../components/quienes-somos/Values";
 
-const teamMembers = await getCollection('team');
+const teamMembers = await getCollection("team");
 ---
 
-<Layout title="Quiénes Somos - E2TRATEGIAS PATRIMONIALES" description="Conoce a nuestro equipo y nuestra historia">
-	<Hero
-		client:load
-		title="Quiénes Somos"
-		subtitle="Somos 2 Expertos en estrategias patrimoniales"
-		imageSrc="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1920"
-	/>
+<Layout
+  title="Quiénes Somos - E2TRATEGIAS PATRIMONIALES"
+  description="Conoce a nuestro equipo y nuestra historia"
+>
+  <Hero
+    client:load
+    title="Quiénes Somos"
+    subtitle="Somos 2 Expertos en estrategias patrimoniales"
+    imageSrc="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1920"
+  />
 
-	<Section
-		client:load
-		title="Nuestra Historia"
-		subtitle="Más de 10 años transformando ideas en realidad"
-		background="light"
-	>
-		<div class="max-w-4xl mx-auto">
-			<p class="text-lg text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-				Fundada en 2014, nuestra empresa nació con la visión de democratizar el acceso a soluciones
-				tecnológicas de calidad. A lo largo de los años, hemos crecido de un equipo de 3 personas
-				a más de 50 profesionales dedicados.
-			</p>
-			<p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-				Hoy en día, somos reconocidos como líderes en desarrollo web y móvil, habiendo trabajado
-				con más de 200 clientes en diversos sectores. Nuestro compromiso con la excelencia y la
-				innovación nos impulsa a superar constantemente las expectativas.
-			</p>
-		</div>
-	</Section>
+  <!-- Historia  -->
+  <Section
+    client:load
+    title="Nuestra Historia"
+    subtitle="Más de 10 años poniendo vidas en marcha"
+    background="light"
+  >
+    <History />
+  </Section>
 
-	<Section
-		client:load
-		title="Nuestros Valores"
-		subtitle="Los pilares que guían nuestro trabajo"
-		background="dark"
-	>
-		<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-			<Card
-				client:visible
-				title="Excelencia"
-				description="Nos esforzamos por entregar productos de la más alta calidad en cada proyecto."
-				delay={0}
-			/>
-			<Card
-				client:visible
-				title="Integridad"
-				description="Actuamos con honestidad y transparencia en todas nuestras relaciones."
-				delay={0.1}
-			/>
-			<Card
-				client:visible
-				title="Innovación"
-				description="Buscamos constantemente nuevas formas de resolver problemas y crear valor."
-				delay={0.2}
-			/>
-		</div>
-	</Section>
+  <!-- Pilares  -->
+  <Section
+    client:load
+    title="Nuestros 3 Pilares"
+    subtitle="Nuestros principios que nos guían"
+    background="light"
+  >
+    <Principios />
+  </Section>
 
-	<Section
-		client:load
-		title="Nuestro Equipo"
-		subtitle="Profesionales comprometidos con tu éxito"
-		background="light"
-	>
-		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-			{
-				teamMembers.map((member) => (
-					<Card
-						client:visible
-						link={`/team/${member.slug}`}
-						title={member.data.name}
-						description={member.data.description}
-						image={typeof member.data.image === 'string' ? member.data.image : member.data.image.src}
-						delay={0}
-						transitionNameImage={`image-${member.slug}`}
-						transitionNameTitle={`title-${member.slug}`}
-					/>
-				))
-			}
-		</div>
-	</Section>
+  <!-- Valores  -->
+  <Section
+    client:load
+    title="Nuestros Valores"
+    subtitle="Los pilares que guían nuestro trabajo"
+    background="dark"
+  >
+    <Values client:visible />
+  </Section>
+
+  <!-- Team  -->
+  <Section
+    client:load
+    title="Nuestro equipo E2"
+    subtitle="Conoce más a detalle a los expertos"
+    background="light"
+  >
+    <div
+      class="grid grid-cols-1 md:grid-cols-[repeat(auto-fit,minmax(250px,max-content))] justify-center gap-8"
+    >
+      {
+        teamMembers.map((member) => (
+          <Card
+            client:visible
+            link={`/team/${member.slug}`}
+            title={member.data.name}
+            description={member.data.description}
+            image={
+              typeof member.data.image === "string"
+                ? member.data.image
+                : member.data.image.src
+            }
+            delay={0}
+            transitionNameImage={`image-${member.slug}`}
+            transitionNameTitle={`title-${member.slug}`}
+          />
+        ))
+      }
+    </div>
+  </Section>
 </Layout>

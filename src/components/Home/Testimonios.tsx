@@ -22,7 +22,7 @@ const Testimonios = () => {
               key={index}
               className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg flex flex-col relative h-full hover:shadow-xl transition-shadow duration-300"
             >
-              <div className="absolute top-6 right-8 text-primary-200 dark:text-gray-700 opacity-50">
+              <div className="absolute top-6 right-8 text-primary-200 dark:text-gray-400 opacity-50">
                 <FaQuoteLeft size={40} />
               </div>
 
@@ -42,7 +42,7 @@ const Testimonios = () => {
                   <h3 className="font-bold text-lg text-gray-900 dark:text-white">
                     {testimonio.nombre}
                   </h3>
-                  <p className="text-sm text-primary dark:text-primary-400 font-medium">
+                  <p className="text-sm text-primary dark:text-primary-200 font-medium">
                     {testimonio.ocupacion}
                   </p>
                 </div>
