@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { HiMenu, HiX, HiSun, HiMoon } from "react-icons/hi";
+import { HiMenu, HiX } from "react-icons/hi";
 import LogoW from "../assets/images/LogoW.svg";
-import LogoB from "../assets/images/LOGO-E2-SIN-TEXTO.svg";
+import ThemeToggle from "./shared/ThemeToggle";
 
 const navItems = [
   { name: "Inicio", href: "/" },
@@ -16,20 +16,48 @@ const navItems = [
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [theme, setTheme] = useState("light");
   const [currentPath, setCurrentPath] = useState("");
+  // Theme state is now handled by ThemeToggle, but we need it for header background?
+  // Actually, the header background logic relied on 'theme' state.
+  // We need to know the theme here too if we want to change the header background based on theme.
+  // However, usually we can use CSS classes (dark:bg-...) instead of inline styles for theme.
+  // Let's check the original code.
+  // Original: backgroundColor: isScrolled ? theme === "dark" ? "rgba(17, 24, 39, 0.95)" : "rgba(255, 255, 255, 0.95)"
+  // We can use CSS variables or classes. But since it's Framer Motion 'animate', it expects values.
+  // We can listen to the theme change or just use a class-based approach for the background and let CSS handle it,
+  // but Framer Motion might fight with it.
+  // Alternatively, we can keep the theme state here just for the background, but sync it?
+  // Or better, use a custom hook for theme.
+
+  // For now, to keep it simple and robust, I'll re-implement the theme listener here or just use CSS classes for the header background
+  // and remove the inline style for background color related to theme, relying on Tailwind's dark mode classes.
+  // But wait, it uses 'animate' prop.
+
+  // Let's try to use a hook to share state if needed, or just read from localStorage/DOM.
+  // Actually, I'll create a useTheme hook? No, I'll just duplicate the listener for now to minimalize changes,
+  // OR I can just use className for the background color and animate opacity/backdrop filter?
+
+  // Let's stick to the simplest refactor: Use ThemeToggle for the button, but keep the theme state here for the background logic
+  // to ensure visual consistency without breaking the animation.
+
+  const [theme, setTheme] = useState("light");
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme") || "light";
     setTheme(savedTheme);
-    if (savedTheme === "dark") {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
 
-    // Set current path on mount
-    setCurrentPath(window.location.pathname);
+    // Observer for class changes on html element to sync theme state
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.attributeName === "class") {
+          const isDark = document.documentElement.classList.contains("dark");
+          setTheme(isDark ? "dark" : "light");
+        }
+      });
+    });
+
+    observer.observe(document.documentElement, { attributes: true });
+    return () => observer.disconnect();
   }, []);
 
   useEffect(() => {
@@ -41,16 +69,10 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const toggleTheme = () => {
-    const newTheme = theme === "light" ? "dark" : "light";
-    setTheme(newTheme);
-    localStorage.setItem("theme", newTheme);
-    if (newTheme === "dark") {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  };
+  // Set current path on mount
+  useEffect(() => {
+    setCurrentPath(window.location.pathname);
+  }, []);
 
   return (
     <motion.header
@@ -107,31 +129,23 @@ export default function Header() {
                 </a>
               );
             })}
-            <button
-              onClick={toggleTheme}
-              className={`p-2 rounded-full cursor-pointer transition-all hover:scale-110 ${
+            <ThemeToggle
+              className={
                 isScrolled
                   ? "bg-gray-100 dark:bg-gray-800 text-secondary dark:text-secondary-400 shadow-sm"
                   : "bg-white/10 text-secondary-600 backdrop-blur-sm hover:bg-white/20"
-              }`}
-              aria-label="Toggle theme"
-            >
-              {theme === "dark" ? <HiSun size={20} /> : <HiMoon size={20} />}
-            </button>
+              }
+            />
           </div>
 
           <div className="lg:hidden flex items-center space-x-4">
-            <button
-              onClick={toggleTheme}
-              className={`p-2 rounded-full transition-all ${
+            <ThemeToggle
+              className={
                 isScrolled
                   ? "bg-gray-100 dark:bg-gray-800 text-yellow-500 dark:text-yellow-400"
                   : "bg-white/10 text-yellow-300 backdrop-blur-sm"
-              }`}
-              aria-label="Toggle theme"
-            >
-              {theme === "dark" ? <HiSun size={20} /> : <HiMoon size={20} />}
-            </button>
+              }
+            />
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className={`p-2 transition-colors cursor-pointer ${

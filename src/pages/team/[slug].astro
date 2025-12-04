@@ -1,0 +1,92 @@
+---
+import { getCollection, render } from 'astro:content';
+import ContentLayout from '../../layouts/ContentLayout.astro';
+import Form from '../../components/Form';
+import Card from '../../components/Card';
+import ThemeToggle from '../../components/shared/ThemeToggle';
+
+export async function getStaticPaths() {
+  const teamEntries = await getCollection('team');
+  return teamEntries.map(entry => ({
+    params: { slug: entry.slug }, props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+
+const allTeamMembers = await getCollection('team');
+const otherMembers = allTeamMembers.filter(member => member.slug !== entry.slug);
+---
+
+<ContentLayout title={`${entry.data.name} - E2STRATEGIAS PATRIMONIALES`} description={entry.data.description}>
+  <div class="relative bg-gray-50 dark:bg-gray-900 min-h-screen transition-colors duration-300">
+      
+      <div class="absolute top-0 left-0 right-0 p-4 md:p-8 flex justify-between items-center z-20">
+        <a href="/quienes-somos" onclick="if(history.length > 1){event.preventDefault(); history.back();}" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary-400 flex items-center gap-2 transition-colors bg-white/80 dark:bg-black/20 hover:bg-white dark:hover:bg-black/40 px-4 py-2 rounded-full backdrop-blur-sm shadow-sm">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="m15 18-6-6 6-6"/></svg>
+          Volver
+        </a>
+        <ThemeToggle client:load className="bg-white/80 dark:bg-black/20 hover:bg-white dark:hover:bg-black/40 text-gray-600 dark:text-gray-300 backdrop-blur-sm shadow-sm" />
+      </div>
+
+      <div class="container mx-auto px-4 pt-32 pb-20">
+        
+        <div class="max-w-6xl mx-auto mb-24">
+          
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            <div class="flex flex-col gap-8">
+               <h1 
+                class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white"
+                transition:name={`title-${entry.slug}`}
+              >
+                {entry.data.name}
+              </h1>
+
+              <div class="relative">
+                <div class="aspect-square rounded-3xl overflow-hidden shadow-2xl">
+                  <img 
+                    src={typeof entry.data.image === 'string' ? entry.data.image : entry.data.image.src} 
+                    alt={entry.data.name}
+                    class="w-full h-full object-cover"
+                    transition:name={`image-${entry.slug}`}
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="flex flex-col justify-center h-full pt-8 lg:pt-0">
+              <div class="inline-block px-4 py-2 bg-gray-100 dark:bg-gray-800 rounded-lg text-sm font-medium text-gray-600 dark:text-gray-300 mb-8 w-fit self-start">
+                {entry.data.description}
+              </div>
+              
+              <div class="prose prose-lg dark:prose-invert text-gray-600 dark:text-gray-300 leading-relaxed">
+                <Content />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {otherMembers.length > 0 && (
+          <div class="max-w-6xl mx-auto">
+            <h3 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-8">Otros miembros</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {otherMembers.map((member) => (
+                <Card
+                  client:visible
+                  link={`/team/${member.slug}`}
+                  title={member.data.name}
+                  description={member.data.description}
+                  image={typeof member.data.image === 'string' ? member.data.image : member.data.image.src}
+                  delay={0}
+                  transitionNameImage={`image-${member.slug}`}
+                  transitionNameTitle={`title-${member.slug}`}
+                />
+              ))}
+            </div>
+          </div>
+        )}
+
+      </div>
+  </div>
+</ContentLayout>

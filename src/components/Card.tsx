@@ -8,6 +8,8 @@ interface CardProps {
   image?: string;
   link?: string;
   delay?: number;
+  transitionNameImage?: string;
+  transitionNameTitle?: string;
 }
 
 export default function Card({
@@ -17,6 +19,8 @@ export default function Card({
   image,
   link,
   delay = 0,
+  transitionNameImage,
+  transitionNameTitle,
 }: CardProps) {
   const CardContent = () => (
     <>
@@ -26,6 +30,11 @@ export default function Card({
             src={image}
             alt={title}
             className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+            style={
+              transitionNameImage
+                ? { viewTransitionName: transitionNameImage }
+                : {}
+            }
           />
         </div>
       )}
@@ -35,7 +44,14 @@ export default function Card({
             {icon}
           </div>
         )}
-        <h3 className="text-2xl font-bold mb-3 text-gray-900 dark:text-white">
+        <h3
+          className="text-2xl font-bold mb-3 text-gray-900 dark:text-white"
+          style={
+            transitionNameTitle
+              ? { viewTransitionName: transitionNameTitle }
+              : {}
+          }
+        >
           {title}
         </h3>
         <p className="text-gray-600 dark:text-gray-300">{description}</p>

@@ -3,6 +3,9 @@ import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero';
 import Section from '../components/Section';
 import Card from '../components/Card';
+import { getCollection } from 'astro:content';
+
+const teamMembers = await getCollection('team');
 ---
 
 <Layout title="Quiénes Somos - E2STRATEGIAS PATRIMONIALES" description="Conoce a nuestro equipo y nuestra historia">
@@ -68,20 +71,20 @@ import Card from '../components/Card';
 		background="light"
 	>
 		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-			<Card
-				client:visible
-				title="Vero Elizondo"
-				description="CEO & Fundador"
-				image="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400"
-				delay={0}
-			/>
-			<Card
-				client:visible
-				title="Rafael Esquer"
-				description="Directora de Tecnología"
-				image="https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg?auto=compress&cs=tinysrgb&w=400"
-				delay={0.1}
-			/>
+			{
+				teamMembers.map((member) => (
+					<Card
+						client:visible
+						link={`/team/${member.slug}`}
+						title={member.data.name}
+						description={member.data.description}
+						image={typeof member.data.image === 'string' ? member.data.image : member.data.image.src}
+						delay={0}
+						transitionNameImage={`image-${member.slug}`}
+						transitionNameTitle={`title-${member.slug}`}
+					/>
+				))
+			}
 		</div>
 	</Section>
 </Layout>
