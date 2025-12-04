@@ -4,13 +4,14 @@ import Hero from '../components/Hero';
 import Section from '../components/Section';
 import Card from '../components/Card';
 import Form from '../components/Form';
+import Hacemos from '../components/que-hacemos/Hacemos.astro';
 ---
 
 <Layout title="Qué Hacemos - E2STRATEGIAS PATRIMONIALES" description="Conoce nuestros servicios y soluciones">
 	<Hero
 		client:load
 		title="Qué Hacemos"
-		subtitle="Estrategias para disfrutar y tomar control de tu vida."
+		subtitle="Soluciones financieras con propósito"
 		imageSrc="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1920"
 	/>
 
@@ -53,24 +54,7 @@ import Form from '../components/Form';
 		background="dark"
 	>
 		<div class="max-w-4xl mx-auto space-y-8">
-			<div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
-				<h3 class="text-2xl font-bold mb-3 text-primary dark:text-primary-500">Seguros de vida</h3>
-				<p class="text-gray-600 dark:text-gray-300">
-				Recibe consejos de expertos sobre cómo empezar, una lista de control para tu primer año de negocios y útiles enlaces de seguimiento.
-				</p>
-			</div>
-			<div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
-				<h3 class="text-2xl font-bold mb-3 text-primary dark:text-primary-500">Seguros de muerte</h3>
-				<p class="text-gray-600 dark:text-gray-300">
-					Acceso mensual a nuestra biblioteca creciente de clases en línea, cursos de formación, eventos especiales y sesiones individuales de asesoramiento.
-				</p>
-			</div>
-			<div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
-				<h3 class="text-2xl font-bold mb-3 text-primary dark:text-primary-500">Seguros por accidente</h3>
-				<p class="text-gray-600 dark:text-gray-300">
-					Acceso anual a nuestra biblioteca creciente de clases en línea, cursos de formación, eventos especiales y sesiones individuales de asesoramiento.
-				</p>
-			</div>
+			<Hacemos />
 		</div>
 	</Section>
 	<Form client:visible />

@@ -9,7 +9,6 @@ const navItems = [
   { name: "Qué Hacemos", href: "/que-hacemos" },
   { name: "Quiénes Somos", href: "/quienes-somos" },
   { name: "Eventos", href: "/eventos" },
-  { name: "Agenda una Cita", href: "/agenda" },
   { name: "Blog", href: "/blog" },
   { name: "Contáctanos", href: "/contacto" },
 ];

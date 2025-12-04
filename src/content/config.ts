@@ -23,4 +23,19 @@ const eventosCollection = defineCollection({
       location: z.string().optional(),
     }),
 });
-export const collections = { blog: blogCollection, eventos: eventosCollection };
+
+const teamColletion = defineCollection({
+  type: "content",
+  schema: ({ image }) =>
+    z.object({
+      name: z.string(),
+      description: z.string(),
+      image: z.union([image(), z.string()]),
+    }),
+});
+
+export const collections = {
+  blog: blogCollection,
+  eventos: eventosCollection,
+  team: teamColletion,
+};

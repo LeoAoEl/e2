@@ -7,18 +7,19 @@ import Slider from '../components/Slider';
 import Form from '../components/Form';
 import { sliderData } from '../data/sliderData';
 import HomeVideo from '../assets/videos/Home.mp4';
+import Elegirnos from '../components/Home/Elegirnos.astro';
+import Testimonios from '../components/Home/Testimonios';
 ---
 
 <Layout title="Inicio - E2STRATEGIAS PATRIMONIALES" description="Bienvenido a E2STRATEGIAS PATRIMONIALES">
 	<Hero
 		client:load
 		title="E2STRATEGIAS PATRIMONIALES"
-		subtitle="Déjanos hacerte la vida más fácil"
+		subtitle="Diseñamos estrategias para disfrutar en vida"
 		ctaText="Conoce Más"
 		ctaLink="que-hacemos"
 		imageSrc="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1920"
 	/>
-
 	<Section
 		client:load
 		title="Nuestros Servicios"
@@ -55,30 +56,9 @@ import HomeVideo from '../assets/videos/Home.mp4';
 		slides={sliderData}
 	/>
 
-	<!-- Seccion por qué elegirnos -->
-	<Section
-		client:load
-		title="¿Por Qué Elegirnos?"
-		subtitle="Experiencia, dedicación y resultados comprobados"
-		background="light"
-	>
-		<div class="max-w-4xl mx-auto text-center">
-			<p class="text-lg text-gray-600 dark:text-gray-300 mb-8">
-				Con años de experiencia en el sector, nos hemos consolidado como líderes en soluciones digitales.
-				Nuestro compromiso es brindarte servicios de la más alta calidad, adaptados a tus necesidades específicas.
-			</p>
-			<a
-				href="/quienes-somos"
-				class="inline-block bg-primary hover:bg-primary-700 text-white px-8 py-4 rounded-full font-semibold transition-all hover:scale-105 shadow-lg"
-			>
-				Conoce Nuestro Equipo
-			</a>
-		</div>
-	</Section>
+	<Elegirnos />
+	<Testimonios client:visible />
 	<Form client:visible />
 
-	</Section>
 
-
-	
 </Layout>
