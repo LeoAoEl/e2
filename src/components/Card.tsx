@@ -42,16 +42,12 @@ export default function Card({
       )}
       <div className="p-6">
         {icon && (
-          <div className="text-4xl mb-4 text-primary dark:text-primary-500">
+          <div className="text-4xl mb-4 text-primary group-hover:text-secondary ease-in transition-all dark:text-primary-500">
             {icon}
           </div>
         )}
         <h3
-          className={`text-2xl font-bold mb-3 text-gray-900 dark:text-white ${
-            isSecondary
-              ? "group-hover:text-secondary transition-colors duration-300"
-              : ""
-          }`}
+          className="text-2xl font-bold mb-3 text-primary-700 dark:text-white group-hover:text-secondary transition-colors duration-300"
           style={
             transitionNameTitle
               ? { viewTransitionName: transitionNameTitle }

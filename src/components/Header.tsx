@@ -150,7 +150,7 @@ export default function Header() {
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className={`p-2 transition-colors cursor-pointer ${
                 isScrolled
-                  ? "text-gray-900 dark:text-white"
+                  ? "text-primary-700 dark:text-white"
                   : "text-white drop-shadow-lg"
               }`}
               aria-label="Toggle menu"
@@ -166,7 +166,7 @@ export default function Header() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
-              className="lg:hidden mt-4 bg-white dark:bg-gray-900 rounded-xl shadow-xl overflow-hidden border border-gray-100 dark:border-gray-800"
+              className="lg:hidden mt-4 bg-white dark:bg-primary-700 rounded-xl shadow-xl overflow-hidden border border-gray-100 dark:border-gray-800"
             >
               <div className="flex flex-col space-y-1 p-4">
                 {navItems.map((item) => {

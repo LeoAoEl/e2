@@ -2,11 +2,11 @@ import { motion } from "framer-motion";
 import type { ReactNode } from "react";
 
 interface SectionProps {
-  title?: string;
-  subtitle?: string;
-  children: ReactNode;
-  className?: string;
-  background?: "light" | "dark" | "gradient";
+  readonly title?: string;
+  readonly subtitle?: string;
+  readonly children: ReactNode;
+  readonly className?: string;
+  readonly background?: "light" | "dark" | "gradient";
 }
 
 export default function Section({
@@ -17,10 +17,10 @@ export default function Section({
   background = "light",
 }: SectionProps) {
   const bgClasses = {
-    light: "bg-white dark:bg-gray-900",
+    light: "bg-white dark:bg-primary-700",
     dark: "bg-gray-100 dark:bg-gray-800",
     gradient:
-      "bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-800 dark:to-gray-900",
+      "bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-800 dark:to-primary-700",
   };
 
   return (
@@ -34,7 +34,7 @@ export default function Section({
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="text-4xl md:text-5xl font-bold mb-4 text-secondary underline"
+                className="text-4xl md:text-5xl font-bold mb-4 text-secondary"
               >
                 {title}
               </motion.h2>

@@ -29,10 +29,10 @@ export default function ServiceCard({
       className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 group"
     >
       <div className="p-6">
-        <div className="text-4xl mb-4 text-primary dark:text-primary-500">
+        <div className="text-4xl mb-4 text-primary group-hover:text-secondary ease-in transition-all dark:text-primary-500">
           {icons[iconType]}
         </div>
-        <h3 className="text-2xl font-bold mb-3 text-gray-900 dark:text-white">
+        <h3 className="text-2xl font-bold mb-3 group-hover:text-secondary ease-in transition-all text-primary-700 dark:text-white">
           {title}
         </h3>
         <p className="text-gray-600 dark:text-gray-300">{description}</p>

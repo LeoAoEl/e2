@@ -119,7 +119,7 @@ export default function Form() {
                         required
                         value={formData.nombre}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 rounded-lg bg-white/90 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-secondary"
+                        className="w-full px-4 py-3 rounded-lg bg-white/90 text-primary-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-secondary"
                       />
                     </div>
                     <div className="space-y-2">
@@ -133,7 +133,7 @@ export default function Form() {
                         required
                         value={formData.apellido}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 rounded-lg bg-white/90 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-secondary"
+                        className="w-full px-4 py-3 rounded-lg bg-white/90 text-primary-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-secondary"
                       />
                     </div>
                   </div>
@@ -150,7 +150,7 @@ export default function Form() {
                         required
                         value={formData.email}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 rounded-lg bg-white/90 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-secondary"
+                        className="w-full px-4 py-3 rounded-lg bg-white/90 text-primary-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-secondary"
                       />
                     </div>
                     <div className="space-y-2">
@@ -164,7 +164,7 @@ export default function Form() {
                         required
                         value={formData.telefono}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 rounded-lg bg-white/90 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-secondary"
+                        className="w-full px-4 py-3 rounded-lg bg-white/90 text-primary-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-secondary"
                       />
                     </div>
                   </div>
@@ -179,7 +179,7 @@ export default function Form() {
                       rows={4}
                       value={formData.mensaje}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg bg-white/90 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-secondary resize-none"
+                      className="w-full px-4 py-3 rounded-lg bg-white/90 text-primary-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-secondary resize-none"
                     />
                   </div>
 
@@ -307,7 +307,7 @@ export default function Form() {
                             required
                             value={formData.nombre}
                             onChange={handleChange}
-                            className="w-full px-4 py-3 rounded-lg bg-white/90 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-secondary"
+                            className="w-full px-4 py-3 rounded-lg bg-white/90 text-primary-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-secondary"
                           />
                         </div>
                         <div className="space-y-2">
@@ -324,7 +324,7 @@ export default function Form() {
                             required
                             value={formData.telefono}
                             onChange={handleChange}
-                            className="w-full px-4 py-3 rounded-lg bg-white/90 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-secondary"
+                            className="w-full px-4 py-3 rounded-lg bg-white/90 text-primary-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-secondary"
                           />
                         </div>
                       </div>
@@ -343,7 +343,7 @@ export default function Form() {
                             name="email"
                             value={formData.email}
                             onChange={handleChange}
-                            className="w-full px-4 py-3 rounded-lg bg-white/90 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-secondary"
+                            className="w-full px-4 py-3 rounded-lg bg-white/90 text-primary-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-secondary"
                           />
                         </div>
                         <div className="space-y-2">
@@ -360,7 +360,7 @@ export default function Form() {
                             required
                             value={formData.fechaNacimiento}
                             onChange={handleChange}
-                            className="w-full px-4 py-3 rounded-lg bg-white/90 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-secondary"
+                            className="w-full px-4 py-3 rounded-lg bg-white/90 text-primary-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-secondary"
                           />
                         </div>
                       </div>
@@ -377,7 +377,7 @@ export default function Form() {
                             required
                             value={formData.ciudad}
                             onChange={handleChange}
-                            className="w-full px-4 py-3 rounded-lg bg-white/90 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-secondary"
+                            className="w-full px-4 py-3 rounded-lg bg-white/90 text-primary-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-secondary"
                           />
                         </div>
                         <div className="space-y-2">
@@ -394,7 +394,7 @@ export default function Form() {
                             required
                             value={formData.codigoPostal}
                             onChange={handleChange}
-                            className="w-full px-4 py-3 rounded-lg bg-white/90 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-secondary"
+                            className="w-full px-4 py-3 rounded-lg bg-white/90 text-primary-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-secondary"
                           />
                         </div>
                       </div>

@@ -81,7 +81,7 @@ export default function Hero({
           >
             <a
               href={ctaLink}
-              className="inline-flex items-center gap-2 bg-white text-gray-900 px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-all hover:scale-105 shadow-xl"
+              className="inline-flex items-center gap-2 bg-white text-primary-700 px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-all hover:scale-105 shadow-xl"
             >
               {ctaText}
               <HiArrowRight size={20} />

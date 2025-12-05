@@ -4,10 +4,10 @@ import { FaQuoteLeft } from "react-icons/fa";
 
 const Testimonios = () => {
   return (
-    <section className="py-20 bg-gray-50 dark:bg-gray-900">
+    <section className="py-20 bg-gray-50 dark:bg-primary-700">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary-700 dark:text-white mb-4">
             Lo que dicen nuestros clientes
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300">
@@ -39,7 +39,7 @@ const Testimonios = () => {
                   />
                 </div>
                 <div>
-                  <h3 className="font-bold text-lg text-gray-900 dark:text-white">
+                  <h3 className="font-bold text-lg text-primary-700 dark:text-white">
                     {testimonio.nombre}
                   </h3>
                   <p className="text-sm text-primary dark:text-primary-200 font-medium">
