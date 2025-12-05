@@ -8,6 +8,7 @@ interface HeroProps {
   ctaLink?: string;
   imageSrc?: string;
   showButton?: boolean;
+  onlyTwo?: boolean;
 }
 
 export default function Hero({
@@ -17,7 +18,11 @@ export default function Hero({
   ctaLink,
   imageSrc,
   showButton = false,
+  onlyTwo = false,
 }: HeroProps) {
+  const firstTwo = title.slice(0, 2);
+  const restOfTitle = title.slice(2);
+
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
       <div
@@ -38,29 +43,58 @@ export default function Hero({
           transition={{ duration: 0.8 }}
           className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 drop-shadow-lg flex justify-center"
         >
-          <motion.div
-            className="relative inline-block"
-            initial="rest"
-            animate="highlight"
-          >
-            <motion.span
-              variants={{
-                rest: { color: "#ffffff" },
-                highlight: { color: "#f4b620" },
-              }}
-              transition={{ duration: 0.5, delay: 1.2 }}
-            >
-              {title}
-            </motion.span>
+          {onlyTwo ? (
+            <>
+              <motion.div
+                className="relative inline-block"
+                initial="rest"
+                animate="highlight"
+              >
+                <motion.span
+                  variants={{
+                    rest: { color: "#ffffff" },
+                    highlight: { color: "#f4b620" },
+                  }}
+                  transition={{ duration: 0.5, delay: 1.2 }}
+                >
+                  {firstTwo}
+                </motion.span>
+                <motion.div
+                  className="absolute left-0 bottom-0 h-[4px] bg-secondary"
+                  variants={{
+                    rest: { width: 0, opacity: 0 },
+                    highlight: { width: "100%", opacity: 1 },
+                  }}
+                  transition={{ duration: 0.5, ease: "easeInOut", delay: 1.2 }}
+                />
+              </motion.div>
+              <span>{restOfTitle}</span>
+            </>
+          ) : (
             <motion.div
-              className="absolute left-0 bottom-0 h-[4px] bg-secondary"
-              variants={{
-                rest: { width: 0, opacity: 0 },
-                highlight: { width: "100%", opacity: 1 },
-              }}
-              transition={{ duration: 0.5, ease: "easeInOut", delay: 1.2 }}
-            />
-          </motion.div>
+              className="relative inline-block"
+              initial="rest"
+              animate="highlight"
+            >
+              <motion.span
+                variants={{
+                  rest: { color: "#ffffff" },
+                  highlight: { color: "#f4b620" },
+                }}
+                transition={{ duration: 0.5, delay: 1.2 }}
+              >
+                {title}
+              </motion.span>
+              <motion.div
+                className="absolute left-0 bottom-0 h-[4px] bg-secondary"
+                variants={{
+                  rest: { width: 0, opacity: 0 },
+                  highlight: { width: "100%", opacity: 1 },
+                }}
+                transition={{ duration: 0.5, ease: "easeInOut", delay: 1.2 }}
+              />
+            </motion.div>
+          )}
         </motion.h1>
 
         <motion.p

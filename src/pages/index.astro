@@ -1,65 +1,63 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Hero from '../components/Hero';
-import Section from '../components/Section';
-import ServiceCard from '../components/ServiceCard';
-import Slider from '../components/Slider';
-import Form from '../components/Form';
-import { sliderData } from '../data/sliderData';
-import HomeVideo from '../assets/videos/Home.mp4';
-import Elegirnos from '../components/Home/Elegirnos.astro';
-import Testimonios from '../components/Home/Testimonios';
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero";
+import Section from "../components/Section";
+import ServiceCard from "../components/ServiceCard";
+import Slider from "../components/Slider";
+import Form from "../components/Form";
+import { sliderData } from "../data/sliderData";
+import HomeVideo from "../assets/videos/Home.mp4";
+import Elegirnos from "../components/Home/Elegirnos.astro";
+import Testimonios from "../components/Home/Testimonios";
 ---
 
-<Layout title="Inicio - E2TRATEGIAS PATRIMONIALES" description="Bienvenido a E2TRATEGIAS PATRIMONIALES">
-	<Hero
-		client:load
-		showButton={true}
-		title="E2TRATEGIAS PATRIMONIALES"
-		subtitle="Diseñamos estrategias para disfrutar en vida"
-		ctaText="Conoce Más"
-		ctaLink="que-hacemos"
-		imageSrc="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1920"
-	/>
-	<Section
-		client:load
-		title="Nuestros Servicios"
-		subtitle="Ofrecemos soluciones personalizadas para cada necesidad"
-		background="dark"
-	>
-		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-			<ServiceCard
-				client:visible
-				title="Innovación"
-				description="Desarrollamos soluciones tecnológicas de vanguardia que impulsan tu negocio hacia el futuro."
-				iconType="lightbulb"
-				delay={0}
-			/>
-			<ServiceCard
-				client:visible
-				title="Colaboración"
-				description="Trabajamos en equipo contigo para lograr los mejores resultados posibles."
-				iconType="users"
-				delay={0.1}
-			/>
-			<ServiceCard
-				client:visible
-				title="Resultados"
-				description="Medimos el éxito con datos concretos y mejoramos continuamente."
-				iconType="chart"
-				delay={0.2}
-			/>
-		</div>
-	</Section>
-	<Slider
-		client:visible
-		videoSrc={HomeVideo}
-		slides={sliderData}
-	/>
+<Layout
+  title="Inicio - E2TRATEGIAS PATRIMONIALES"
+  description="Bienvenido a E2TRATEGIAS PATRIMONIALES"
+>
+  <Hero
+    client:load
+    showButton={true}
+    onlyTwo={true}
+    title="E2TRATEGIAS PATRIMONIALES"
+    subtitle="Diseñamos estrategias para disfrutar en vida"
+    ctaText="Conoce Más"
+    ctaLink="que-hacemos"
+    imageSrc="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1920"
+  />
+  <Section
+    client:load
+    title="Nuestros Servicios"
+    subtitle="Ofrecemos soluciones personalizadas para cada necesidad"
+    background="dark"
+  >
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <ServiceCard
+        client:visible
+        title="Innovación"
+        description="Desarrollamos soluciones tecnológicas de vanguardia que impulsan tu negocio hacia el futuro."
+        iconType="lightbulb"
+        delay={0}
+      />
+      <ServiceCard
+        client:visible
+        title="Colaboración"
+        description="Trabajamos en equipo contigo para lograr los mejores resultados posibles."
+        iconType="users"
+        delay={0.1}
+      />
+      <ServiceCard
+        client:visible
+        title="Resultados"
+        description="Medimos el éxito con datos concretos y mejoramos continuamente."
+        iconType="chart"
+        delay={0.2}
+      />
+    </div>
+  </Section>
+  <Slider client:visible videoSrc={HomeVideo} slides={sliderData} />
 
-	<Elegirnos />
-	<Testimonios client:visible />
-	<Form client:visible />
-
-
+  <Elegirnos />
+  <Testimonios client:visible />
+  <Form client:visible />
 </Layout>

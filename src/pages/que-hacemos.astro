@@ -5,7 +5,7 @@ import Section from "../components/Section";
 import Card from "../components/Card";
 import Form from "../components/Form";
 import Hacemos from "../components/que-hacemos/Hacemos.astro";
-import { FiTarget, FiUsers, FiTrendingUp, FiHeart } from "react-icons/fi";
+import ProcesoHumano from "../components/que-hacemos/ProcesoHumano";
 ---
 
 <Layout
@@ -19,45 +19,14 @@ import { FiTarget, FiUsers, FiTrendingUp, FiHeart } from "react-icons/fi";
     imageSrc="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1920"
   />
 
-  <Section
-    client:load
-    title="Con un proceso totalmente humano"
-    background="light"
-  >
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <Card
-        client:visible
-        title="Identifica tu punto de partida"
-        description="¿Cuál es el primer paso para crear un negocio? No es tan difícil como crees."
-        delay={0}
-      />
-      <Card
-        client:visible
-        title="Hacemos una junta personalizada"
-        description="Haz realidad esas ideas geniales que tienes en la cabeza."
-        delay={0.1}
-      />
-      <Card
-        client:visible
-        title="Encontramos tu mejor estrategia"
-        description="Aprende a presentarte y mostrar tus ideas con confianza."
-        delay={0.2}
-      />
-      <Card
-        client:visible
-        title="Te ayudamos en tu vida"
-        description="Derriba muros para hacer que tu pequeña empresa se convierta en un imperio."
-        delay={0.3}
-      />
-    </div>
-  </Section>
+  <ProcesoHumano client:visible />
 
   <Section
     client:load
     title="Te ayudamos con cualquiera de tus necesidades"
     background="dark"
   >
-    <div class="max-w-4xl mx-auto space-y-8">
+    <div class="mx-auto space-y-8">
       <Hacemos />
     </div>
   </Section>
