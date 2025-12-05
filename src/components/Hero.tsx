@@ -41,11 +41,11 @@ export default function Hero({
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 drop-shadow-lg flex justify-center"
+          className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 drop-shadow-lg text-center"
         >
           {onlyTwo ? (
-            <>
-              <motion.div
+            <span className="inline-block">
+              <motion.span
                 className="relative inline-block"
                 initial="rest"
                 animate="highlight"
@@ -60,16 +60,16 @@ export default function Hero({
                   {firstTwo}
                 </motion.span>
                 <motion.div
-                  className="absolute left-0 bottom-0 h-[4px] bg-secondary"
+                  className="absolute left-0 bottom-0 h-[4px] bg-secondary hidden lg:block"
                   variants={{
                     rest: { width: 0, opacity: 0 },
                     highlight: { width: "100%", opacity: 1 },
                   }}
                   transition={{ duration: 0.5, ease: "easeInOut", delay: 1.2 }}
                 />
-              </motion.div>
-              <span>{restOfTitle}</span>
-            </>
+              </motion.span>
+              {restOfTitle}
+            </span>
           ) : (
             <motion.div
               className="relative inline-block"
