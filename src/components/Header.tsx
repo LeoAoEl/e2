@@ -17,28 +17,6 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [currentPath, setCurrentPath] = useState("");
-  // Theme state is now handled by ThemeToggle, but we need it for header background?
-  // Actually, the header background logic relied on 'theme' state.
-  // We need to know the theme here too if we want to change the header background based on theme.
-  // However, usually we can use CSS classes (dark:bg-...) instead of inline styles for theme.
-  // Let's check the original code.
-  // Original: backgroundColor: isScrolled ? theme === "dark" ? "rgba(17, 24, 39, 0.95)" : "rgba(255, 255, 255, 0.95)"
-  // We can use CSS variables or classes. But since it's Framer Motion 'animate', it expects values.
-  // We can listen to the theme change or just use a class-based approach for the background and let CSS handle it,
-  // but Framer Motion might fight with it.
-  // Alternatively, we can keep the theme state here just for the background, but sync it?
-  // Or better, use a custom hook for theme.
-
-  // For now, to keep it simple and robust, I'll re-implement the theme listener here or just use CSS classes for the header background
-  // and remove the inline style for background color related to theme, relying on Tailwind's dark mode classes.
-  // But wait, it uses 'animate' prop.
-
-  // Let's try to use a hook to share state if needed, or just read from localStorage/DOM.
-  // Actually, I'll create a useTheme hook? No, I'll just duplicate the listener for now to minimalize changes,
-  // OR I can just use className for the background color and animate opacity/backdrop filter?
-
-  // Let's stick to the simplest refactor: Use ThemeToggle for the button, but keep the theme state here for the background logic
-  // to ensure visual consistency without breaking the animation.
 
   const [theme, setTheme] = useState("light");
 
@@ -46,7 +24,6 @@ export default function Header() {
     const savedTheme = localStorage.getItem("theme") || "light";
     setTheme(savedTheme);
 
-    // Observer for class changes on html element to sync theme state
     const observer = new MutationObserver((mutations) => {
       mutations.forEach((mutation) => {
         if (mutation.attributeName === "class") {
@@ -110,7 +87,7 @@ export default function Header() {
                 <a
                   key={item.name}
                   href={item.href}
-                  className={`relative font-medium transition-colors hover:opacity-100 px-1 py-1 ${
+                  className={`relative hover:text-secondary hover:scale-105 transition-all ease-in  font-medium hover:opacity-100 px-1 py-1 ${
                     isScrolled
                       ? "text-gray-700 dark:text-gray-200"
                       : "text-white drop-shadow-lg"

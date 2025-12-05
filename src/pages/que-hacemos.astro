@@ -2,10 +2,10 @@
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero";
 import Section from "../components/Section";
-import Card from "../components/Card";
 import Form from "../components/Form";
 import Hacemos from "../components/que-hacemos/Hacemos.astro";
 import ProcesoHumano from "../components/que-hacemos/ProcesoHumano";
+import video from "../assets/videos/Home.mp4";
 ---
 
 <Layout
@@ -16,7 +16,7 @@ import ProcesoHumano from "../components/que-hacemos/ProcesoHumano";
     client:load
     title="Qué Hacemos"
     subtitle="Soluciones financieras con propósito"
-    imageSrc="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1920"
+    videoSrc={video}
   />
 
   <ProcesoHumano client:visible />

@@ -6,7 +6,7 @@ interface HeroProps {
   subtitle: string;
   ctaText?: string;
   ctaLink?: string;
-  imageSrc?: string;
+  videoSrc?: string;
   showButton?: boolean;
   onlyTwo?: boolean;
 }
@@ -16,7 +16,7 @@ export default function Hero({
   subtitle,
   ctaText,
   ctaLink,
-  imageSrc,
+  videoSrc,
   showButton = false,
   onlyTwo = false,
 }: HeroProps) {
@@ -25,16 +25,25 @@ export default function Hero({
 
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: imageSrc
-            ? `url(${imageSrc})`
-            : "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
-        }}
-      >
-        <div className="absolute inset-0 bg-black/40"></div>
-      </div>
+      {videoSrc ? (
+        <video
+          className="absolute inset-0 w-full h-full object-cover"
+          autoPlay
+          loop
+          muted
+          playsInline
+        >
+          <source src={videoSrc} type="video/mp4" />
+        </video>
+      ) : (
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+          }}
+        ></div>
+      )}
+      <div className="absolute inset-0 bg-black/40"></div>
 
       <div className="relative z-10 container mx-auto px-4 text-center text-white">
         <motion.h1
@@ -59,41 +68,21 @@ export default function Hero({
                 >
                   {firstTwo}
                 </motion.span>
-                <motion.div
-                  className="absolute left-0 bottom-0 h-[4px] bg-secondary hidden lg:block"
-                  variants={{
-                    rest: { width: 0, opacity: 0 },
-                    highlight: { width: "100%", opacity: 1 },
-                  }}
-                  transition={{ duration: 0.5, ease: "easeInOut", delay: 1.2 }}
-                />
               </motion.span>
               {restOfTitle}
             </span>
           ) : (
-            <motion.div
-              className="relative inline-block"
+            <motion.span
+              variants={{
+                rest: { color: "#ffffff" },
+                highlight: { color: "#f4b620" },
+              }}
               initial="rest"
               animate="highlight"
+              transition={{ duration: 0.5, delay: 1.2 }}
             >
-              <motion.span
-                variants={{
-                  rest: { color: "#ffffff" },
-                  highlight: { color: "#f4b620" },
-                }}
-                transition={{ duration: 0.5, delay: 1.2 }}
-              >
-                {title}
-              </motion.span>
-              <motion.div
-                className="absolute left-0 bottom-0 h-[4px] bg-secondary"
-                variants={{
-                  rest: { width: 0, opacity: 0 },
-                  highlight: { width: "100%", opacity: 1 },
-                }}
-                transition={{ duration: 0.5, ease: "easeInOut", delay: 1.2 }}
-              />
-            </motion.div>
+              {title}
+            </motion.span>
           )}
         </motion.h1>
 

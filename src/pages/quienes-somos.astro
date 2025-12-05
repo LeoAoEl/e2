@@ -7,6 +7,7 @@ import { getCollection } from "astro:content";
 import Principios from "../components/quienes-somos/Principios.astro";
 import History from "../components/quienes-somos/History.astro";
 import Values from "../components/quienes-somos/Values";
+import video from "../assets/videos/Home.mp4";
 
 const teamMembers = await getCollection("team");
 ---
@@ -19,7 +20,7 @@ const teamMembers = await getCollection("team");
     client:load
     title="Quiénes Somos"
     subtitle="Somos 2 Expertos en estrategias patrimoniales"
-    imageSrc="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1920"
+    videoSrc={video}
   />
 
   <!-- Historia  -->

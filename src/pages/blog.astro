@@ -1,41 +1,43 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Hero from '../components/Hero';
-import Section from '../components/Section';
-import { getCollection } from 'astro:content';
-import PostCard from '../components/PostCard.astro';
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero";
+import Section from "../components/Section";
+import { getCollection } from "astro:content";
+import PostCard from "../components/PostCard.astro";
+import video from "../assets/videos/Home.mp4";
 
-const blogs = await getCollection("blog")
+const blogs = await getCollection("blog");
 ---
 
-<Layout title="Blog - E2TRATEGIAS PATRIMONIALES" description="Artículos y consejos sobre estrategias patrimoniales">
-	<Hero
-		client:load
-		title="Nuestro Blog"
-		subtitle="Consejos expertos para tu vida y patrimonio"
-		imageSrc="https://images.pexels.com/photos/3184311/pexels-photo-3184311.jpeg?auto=compress&cs=tinysrgb&w=1920"
-	/>
+<Layout
+  title="Blog - E2TRATEGIAS PATRIMONIALES"
+  description="Artículos y consejos sobre estrategias patrimoniales"
+>
+  <Hero
+    client:load
+    title="Nuestro Blog"
+    subtitle="Consejos expertos para tu vida y patrimonio"
+    videoSrc={video}
+  />
 
-	<Section
-		client:load
-		title="Últimas Publicaciones"
-		subtitle="Mantente informado con nuestras estrategias"
-		background="light"
-	>
-		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-			{
-				blogs.map((blog: any, index: number) => (
-					<PostCard
-						title={blog.data.title}
-						description={blog.data.description}
-						image={blog.data.image}
-						link={`/blogs/${blog.slug}`}
-						delay={index * 0.1}
-					/>
-				))
-			}
-		</div>
-	</Section>
-
-
+  <Section
+    client:load
+    title="Últimas Publicaciones"
+    subtitle="Mantente informado con nuestras estrategias"
+    background="light"
+  >
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {
+        blogs.map((blog: any, index: number) => (
+          <PostCard
+            title={blog.data.title}
+            description={blog.data.description}
+            image={blog.data.image}
+            link={`/blogs/${blog.slug}`}
+            delay={index * 0.1}
+          />
+        ))
+      }
+    </div>
+  </Section>
 </Layout>

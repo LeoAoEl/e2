@@ -9,6 +9,7 @@ import { sliderData } from "../data/sliderData";
 import HomeVideo from "../assets/videos/Home.mp4";
 import Elegirnos from "../components/Home/Elegirnos.astro";
 import Testimonios from "../components/Home/Testimonios";
+import video from "../assets/videos/Home.mp4";
 ---
 
 <Layout
@@ -23,7 +24,7 @@ import Testimonios from "../components/Home/Testimonios";
     subtitle="Diseñamos estrategias para disfrutar en vida"
     ctaText="Conoce Más"
     ctaLink="que-hacemos"
-    imageSrc="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1920"
+    videoSrc={video}
   />
   <Section
     client:load
