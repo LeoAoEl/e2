@@ -17,7 +17,7 @@ export default function Section({
   background = "light",
 }: SectionProps) {
   const bgClasses = {
-    light: "bg-white dark:bg-primary-700",
+    light: "bg-white dark:bg-primary-900",
     dark: "bg-gray-100 dark:bg-gray-800",
     gradient:
       "bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-800 dark:to-primary-700",

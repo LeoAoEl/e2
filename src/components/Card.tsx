@@ -11,6 +11,14 @@ interface CardProps {
   transitionNameImage?: string;
   transitionNameTitle?: string;
   isSecondary?: boolean;
+  // Nueva propiedad para controlar la alineación de la imagen
+  imagePosition?:
+    | "object-center"
+    | "object-top"
+    | "object-bottom"
+    | "object-left"
+    | "object-right"
+    | string;
 }
 
 export default function Card({
@@ -23,6 +31,7 @@ export default function Card({
   transitionNameImage,
   transitionNameTitle,
   isSecondary = false,
+  imagePosition = "object-center", // Valor por defecto: centrado
 }: CardProps) {
   const CardContent = () => (
     <>
@@ -31,7 +40,8 @@ export default function Card({
           <img
             src={image}
             alt={title}
-            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+            // Se agrega ${imagePosition} a las clases
+            className={`w-full h-full object-cover transition-transform duration-300 group-hover:scale-110 ${imagePosition}`}
             style={
               transitionNameImage
                 ? { viewTransitionName: transitionNameImage }

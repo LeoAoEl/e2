@@ -1,7 +1,7 @@
 ---
 name: "Vero Elizondo"
 description: "CEO & Fundador"
-image: "https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg?auto=compress&cs=tinysrgb&w=400"
+image: "./images/she.jpeg"
 ---
 
 Vero Elizondo es la fundadora y CEO de E2 Estrategias Patrimoniales. Con más de 15 años de experiencia en el sector financiero y de seguros, ha dedicado su carrera a ayudar a familias y empresas a proteger su patrimonio y alcanzar sus metas financieras.

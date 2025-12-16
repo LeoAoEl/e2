@@ -1,9 +1,9 @@
 ---
-import Header from '../components/Header';
-import Footer from '../components/Footer.astro';
-import '../styles/global.css';
-import { ClientRouter } from 'astro:transitions';
-import ScrollToTop from '../components/shared/ScrollTop';
+import Header from "../components/Header";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
+import { ClientRouter } from "astro:transitions";
+import ScrollToTop from "../components/shared/ScrollTop";
 
 interface Props {
   title?: string;
@@ -11,27 +11,32 @@ interface Props {
   showHeader?: boolean;
 }
 
-const { title = 'E2TRATEGIAS PATRIMONIALES', description = 'Déjanos hacerte la vida más fácil', showHeader = true } = Astro.props;
+const {
+  title = "E2TRATEGIAS PATRIMONIALES",
+  description = "Déjanos hacerte la vida más fácil",
+  showHeader = true,
+} = Astro.props;
 ---
 
 <!doctype html>
 <html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="icon" type="image/svg+xml" href="/logo.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<ClientRouter />
-		<meta name="description" content={description} />
-		<title>{title}</title>
-	</head>
-	<body class="min-h-screen flex flex-col bg-white dark:bg-primary-700 text-primary-700 dark:text-white transition-colors">
-		{showHeader && <Header client:load />}
-		<main class="grow">
-			<slot />
-			    <ScrollToTop client:load />
-
-		</main>
-		<Footer />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <ClientRouter />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+  </head>
+  <body
+    class="min-h-screen flex flex-col bg-white dark:bg-primary-700 text-primary-700 dark:text-white transition-colors"
+  >
+    {showHeader && <Header client:load />}
+    <main class="grow">
+      <slot />
+      <ScrollToTop client:load />
+    </main>
+    <Footer />
+  </body>
 </html>
