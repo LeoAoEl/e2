@@ -7,7 +7,7 @@ import { getCollection } from "astro:content";
 import Principios from "../components/quienes-somos/Principios.astro";
 import History from "../components/quienes-somos/History.astro";
 import Values from "../components/quienes-somos/Values";
-import video from "../assets/videos/conocenos.mp4";
+import video from "../assets/videos/quienes.mp4";
 
 const teamMembers = await getCollection("team");
 ---
@@ -24,20 +24,20 @@ const teamMembers = await getCollection("team");
   />
 
   <!-- Historia  -->
-  <Section
+  <!-- <Section
     client:load
     title="Nuestra Historia"
     subtitle="Más de 10 años poniendo vidas en marcha"
     background="light"
   >
     <History />
-  </Section>
+  </Section> -->
 
   <!-- Pilares  -->
   <Section
     client:load
-    title="Nuestros 3 Pilares"
-    subtitle="Nuestros principios que nos guían"
+    title="Nuestra Historia"
+    subtitle="Más de 10 años poniendo vidas en marcha"
     background="light"
   >
     <Principios />

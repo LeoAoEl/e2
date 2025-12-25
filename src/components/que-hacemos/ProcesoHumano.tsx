@@ -4,29 +4,33 @@ import { FiMapPin, FiUsers, FiTrendingUp, FiHeart } from "react-icons/fi";
 
 const ProcesoHumano = () => {
   return (
-    <Section title="Con un proceso totalmente humano" background="light">
+    <Section
+      title="Con un proceso totalmente humano"
+      subtitle="Ofrecemos un proceso cercano, humano y profesional"
+      background="light"
+    >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <Card
-          title="Identifica tu punto de partida"
-          description="¿Cuál es el primer paso para crear un negocio? No es tan difícil como crees."
+          title="Analizamos tu situación actual"
+          description="Conocemos tu contexto financiero, familiar y profesional para identificar riesgos, oportunidades y áreas de mejora."
           icon={<FiMapPin />}
           delay={0}
         />
         <Card
-          title="Hacemos una junta personalizada"
-          description="Haz realidad esas ideas geniales que tienes en la cabeza."
+          title="Realizamos una asesoría personalizada"
+          description="Te explicamos las opciones de forma clara y honesta, resolviendo dudas y construyendo confianza desde el primer encuentro."
           icon={<FiUsers />}
           delay={0.1}
         />
         <Card
-          title="Encontramos tu mejor estrategia"
-          description="Aprende a presentarte y mostrar tus ideas con confianza."
+          title="Diseñamos tu estrategia patrimonial"
+          description="Creamos una solución a tu medida que puede incluir protección, ahorro, retiro, inversión y planes educativos, según tus objetivos."
           icon={<FiTrendingUp />}
           delay={0.2}
         />
         <Card
-          title="Te ayudamos en tu vida"
-          description="Derriba muros para hacer que tu pequeña empresa se convierta en un imperio."
+          title="Te acompañamos en cada etapa"
+          description="Estamos contigo en el seguimiento, ajustes y toma de decisiones importantes a lo largo de tu vida financiera."
           icon={<FiHeart />}
           delay={0.3}
         />
