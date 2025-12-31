@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { HiArrowRight } from "react-icons/hi";
+import placeholder from "../assets/images/placeholder.avif";
 
 interface HeroProps {
   title: string;
@@ -32,6 +33,7 @@ export default function Hero({
           loop
           muted
           playsInline
+          poster={placeholder.src}
         >
           <source src={videoSrc} type="video/mp4" />
         </video>
