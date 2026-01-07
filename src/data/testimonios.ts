@@ -6,6 +6,8 @@ interface Testimonio {
   ocupacion: string;
   testimonio: string;
   imagen: ImageMetadata | string;
+  isSocial?: boolean;
+  social?: string;
 }
 
 export const testimoniosData: Testimonio[] = [
