@@ -4,6 +4,7 @@ import Footer from "../components/Footer.astro";
 import "../styles/global.css";
 import { ClientRouter } from "astro:transitions";
 import ScrollToTop from "../components/shared/ScrollTop";
+import ScrollVine from "../components/shared/ScrollVine";
 
 interface Props {
   title?: string;
@@ -32,6 +33,7 @@ const {
   <body
     class="min-h-screen flex flex-col bg-white dark:bg-primary-700 text-primary-700 dark:text-white transition-colors"
   >
+    <ScrollVine client:load />
     {showHeader && <Header client:load />}
     <main class="grow">
       <slot />

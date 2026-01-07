@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { HiLightBulb, HiUsers, HiChartBar } from "react-icons/hi";
+import { BranchCorner } from "./shared/NatureDecoration";
 
 interface ServiceCardProps {
   title: string;
@@ -25,18 +26,28 @@ export default function ServiceCard({
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.5, delay }}
-      className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 group"
+      transition={{ duration: 0.6, delay, type: "spring", stiffness: 100 }}
+      className="relative bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 group border border-transparent hover:border-primary/20"
     >
-      <div className="p-6">
-        <div className="text-4xl mb-4 text-primary group-hover:text-secondary ease-in transition-all dark:text-primary-500">
+      {/* Woodsy/Nature decorative corner */}
+      <div className="absolute top-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+        <BranchCorner className="w-24 h-24 text-secondary/40" delay={0} />
+      </div>
+
+      <div className="p-6 relative z-10">
+        <div className="text-4xl mb-4 text-primary group-hover:text-secondary group-hover:scale-110 ease-out transition-all duration-300 dark:text-primary-500 inline-block">
           {icons[iconType]}
         </div>
-        <h3 className="text-2xl font-bold mb-3 group-hover:text-secondary ease-in transition-all text-primary-700 dark:text-white">
+        <h3 className="text-2xl font-bold mb-3 group-hover:text-secondary ease-in transition-colors text-primary-700 dark:text-white">
           {title}
         </h3>
-        <p className="text-gray-600 dark:text-gray-300">{description}</p>
+        <p className="text-gray-600 dark:text-gray-300 relative">
+          {description}
+        </p>
       </div>
+
+      {/* Bottom organic line */}
+      <div className="absolute bottom-0 left-0 w-0 h-1 bg-secondary group-hover:w-full transition-all duration-700 ease-out" />
     </motion.div>
   );
 }

@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { HiMenu, HiX } from "react-icons/hi";
 import LogoW from "../assets/images/LogoW.svg";
 import ThemeToggle from "./shared/ThemeToggle";
+import { Leaf } from "./shared/NatureDecoration";
 
 const navItems = [
   { name: "Inicio", href: "/" },
@@ -87,13 +88,17 @@ export default function Header() {
                 <a
                   key={item.name}
                   href={item.href}
-                  className={`relative hover:text-secondary hover:scale-105 transition-all ease-in  font-medium hover:opacity-100 px-1 py-1 ${
+                  className={`relative group flex items-center gap-1 hover:text-secondary hover:scale-105 transition-all ease-in font-medium hover:opacity-100 px-1 py-1 ${
                     isScrolled
                       ? "text-gray-700 dark:text-gray-200"
                       : "text-white drop-shadow-lg"
                   }`}
                 >
-                  {item.name}
+                  <span className="relative z-10">{item.name}</span>
+                  <Leaf
+                    className="w-4 h-4 text-secondary opacity-0 group-hover:opacity-100 transition-opacity duration-300 -ml-1 mt-1"
+                    color="currentColor"
+                  />
                   {isActive && (
                     <motion.div
                       layoutId="underline"
@@ -101,7 +106,11 @@ export default function Header() {
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       transition={{ duration: 0.3 }}
-                    />
+                    >
+                      <div className="absolute -right-1 -top-2">
+                        <Leaf className="w-3 h-3 text-secondary" />
+                      </div>
+                    </motion.div>
                   )}
                 </a>
               );
