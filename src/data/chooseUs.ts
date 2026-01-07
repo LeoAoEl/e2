@@ -15,7 +15,7 @@ export const whyChooseUs: WhyChooseUsItem[] = [
       "Cada cliente es único. Hacemos planes a tu medida, sin fórmulas copiadas.",
   },
   {
-    title: "Respaldo de Seguros Monterrey",
+    title: "Las compañías más sólidas del mercado asegurador",
     description: "Más de 80 años protegiendo familias y empresas en México.",
   },
   {

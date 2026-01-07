@@ -5,8 +5,7 @@ export const sliderData = [
     buttonRef: "/que-hacemos",
   },
   {
-    title:
-      "Tenemos más de 20 años de experiencia y cientos de clientes felices",
+    title: "Tenemos una gran experiencia y cientos de clientes felices",
     buttonText: "Quiénes Somos",
     buttonRef: "/quienes-somos",
   },
