@@ -30,18 +30,18 @@ export const Leaf = ({
       }}
     >
       <path
-        d="M12 21C12 21 13.5 16.5 18 15C22.5 13.5 22.5 9 19.5 6C16.5 3 12 3 12 3C12 3 7.5 3 4.5 6C1.5 9 1.5 13.5 6 15C10.5 16.5 12 21 12 21Z"
+        d="M12 22C12 22 14 14 18 10C20 8 18 4 16 4C14 4 12 6 12 10C12 6 10 4 8 4C6 4 4 8 6 10C10 14 12 22 12 22Z"
         fill={color}
         stroke={color}
-        strokeWidth="1.5"
+        strokeWidth="1"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
-        d="M12 21C12 21 9 12 12 3"
+        d="M12 22C12 22 12 14 12 6"
         stroke="white"
         strokeOpacity="0.4"
-        strokeWidth="1.5"
+        strokeWidth="1"
         strokeLinecap="round"
       />
     </motion.svg>
@@ -258,6 +258,70 @@ export const SmallSprout = ({
         stroke={color}
         strokeWidth="1.5"
         strokeLinecap="round"
+        fill="none"
+      />
+    </motion.svg>
+  );
+};
+
+export const Grass = ({
+  className = "",
+  delay = 0,
+  color = "currentColor",
+}: NatureProps) => {
+  return (
+    <motion.svg
+      width="100%"
+      height="20"
+      viewBox="0 0 100 20"
+      preserveAspectRatio="none"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: delay + 0.3 }}
+    >
+      <path
+        d="M5 20 Q 8 10, 10 20"
+        stroke={color}
+        strokeWidth="1"
+        fill="none"
+      />
+      <path
+        d="M15 20 Q 18 8, 20 20"
+        stroke={color}
+        strokeWidth="1"
+        fill="none"
+      />
+      <path
+        d="M25 20 Q 28 12, 30 20"
+        stroke={color}
+        strokeWidth="1"
+        fill="none"
+      />
+      <path
+        d="M40 20 Q 43 5, 45 20"
+        stroke={color}
+        strokeWidth="1"
+        fill="none"
+      />
+      <path
+        d="M55 20 Q 58 10, 60 20"
+        stroke={color}
+        strokeWidth="1"
+        fill="none"
+      />
+      <path
+        d="M70 20 Q 73 14, 75 20"
+        stroke={color}
+        strokeWidth="1"
+        fill="none"
+      />
+      <path
+        d="M85 20 Q 88 8, 90 20"
+        stroke={color}
+        strokeWidth="1"
         fill="none"
       />
     </motion.svg>

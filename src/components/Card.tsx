@@ -4,6 +4,7 @@ import {
   BranchCorner,
   LeafPattern,
   SmallSprout,
+  Grass,
 } from "./shared/NatureDecoration";
 
 interface CardProps {
@@ -36,6 +37,10 @@ const NatureDecorations = () => (
 
     <div className="absolute bottom-2 left-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-20">
       <SmallSprout className="w-8 h-8 text-secondary/60" delay={0.1} />
+    </div>
+
+    <div className="absolute bottom-0 left-0 right-0 h-6 overflow-hidden z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none">
+      <Grass className="w-full h-full text-secondary/30" />
     </div>
 
     <div className="absolute bottom-0 left-0 w-0 h-1 bg-secondary group-hover:w-full transition-all duration-700 ease-out z-20" />

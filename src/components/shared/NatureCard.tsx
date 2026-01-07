@@ -1,6 +1,11 @@
 import { motion } from "framer-motion";
 import type { ReactNode } from "react";
-import { BranchCorner, LeafPattern, SmallSprout } from "./NatureDecoration";
+import {
+  BranchCorner,
+  LeafPattern,
+  SmallSprout,
+  Grass,
+} from "./NatureDecoration";
 
 interface NatureCardProps {
   children: ReactNode;
@@ -30,6 +35,10 @@ export default function NatureCard({
 
       <div className="absolute bottom-2 left-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
         <SmallSprout className="w-8 h-8 text-secondary/60" delay={0.1} />
+      </div>
+
+      <div className="absolute bottom-0 left-0 right-0 h-6 overflow-hidden z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none">
+        <Grass className="w-full h-full text-secondary/30" />
       </div>
 
       <div className="relative z-10 w-full">{children}</div>

@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { HiMenu, HiX } from "react-icons/hi";
 import LogoW from "../assets/images/LogoW.svg";
 import ThemeToggle from "./shared/ThemeToggle";
-import { Leaf, VineUnderline } from "./shared/NatureDecoration";
+import { VineUnderline } from "./shared/NatureDecoration";
 
 const navItems = [
   { name: "Inicio", href: "/" },
@@ -95,10 +95,6 @@ export default function Header() {
                   }`}
                 >
                   <span className="relative z-10">{item.name}</span>
-                  <Leaf
-                    className="w-4 h-4 text-secondary opacity-0 group-hover:opacity-100 transition-opacity duration-300 -ml-1 mt-1"
-                    color="currentColor"
-                  />
                   {isActive && (
                     <div className="absolute left-0 right-0 -bottom-2 h-3">
                       <VineUnderline className="w-full h-full text-secondary" />
