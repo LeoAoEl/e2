@@ -18,7 +18,7 @@ export const testimoniosData: Testimonio[] = [
     imagen: Cynthya,
     ocupacion: "Dermatóloga — Cutique The Derma Company",
     testimonio:
-      "Estoy encantada con el servicio, la amabilidad y la calidez en todas mis transacciones de seguros. Me han ayudado a decidir correctamente dónde invertir en seguros médicos, de retiro y de inversión. Siempre están al pendiente de las fechas de pago y me apoyan en todo para hacerme la vida más fácil. Estoy profundamente agradecida por su acompañamiento y consejos. Sin duda, la mejor opción en seguros.",
+      "Estoy encantada con el servicio, la amabilidad y la calidez en todas mis transacciones de seguros. Me han ayudado a decidir correctamente dónde invertir en seguros médicos, de retiro y de inversión. Siempre están al pendiente y me apoyan en todo para hacerme la vida más fácil. Estoy profundamente agradecida por su acompañamiento y consejos. Sin duda, la mejor opción en seguros.",
   },
   {
     nombre: "Alfredo Jiménez",
