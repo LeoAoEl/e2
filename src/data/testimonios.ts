@@ -13,6 +13,8 @@ interface Testimonio {
 export const testimoniosData: Testimonio[] = [
   {
     nombre: "Dra. Cynthia Mendoza Rodríguez",
+    isSocial: true,
+    social: "https://cutique.com.mx/",
     imagen: Cynthya,
     ocupacion: "Dermatóloga — Cutique The Derma Company",
     testimonio:

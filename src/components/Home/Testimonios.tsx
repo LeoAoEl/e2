@@ -1,4 +1,3 @@
-import React from "react";
 import { testimoniosData } from "../../data/testimonios";
 import { FaQuoteLeft } from "react-icons/fa";
 
@@ -42,9 +41,20 @@ const Testimonios = () => {
                   <h3 className="font-bold text-lg text-primary-700 dark:text-white">
                     {testimonio.nombre}
                   </h3>
-                  <p className="text-sm text-primary dark:text-primary-200 font-medium">
-                    {testimonio.ocupacion}
-                  </p>
+                  {testimonio.isSocial ? (
+                    <a
+                      href={testimonio.social}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary-200 hover:text-primary-400 transition-colors"
+                    >
+                      {testimonio.ocupacion}
+                    </a>
+                  ) : (
+                    <p className="text-sm text-primary dark:text-primary-200 font-medium">
+                      {testimonio.ocupacion}
+                    </p>
+                  )}
                 </div>
               </div>
 
