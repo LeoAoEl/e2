@@ -140,3 +140,126 @@ export const BranchCorner = ({
     </motion.svg>
   );
 };
+
+export const VineUnderline = ({
+  className = "",
+  delay = 0,
+  color = "currentColor",
+}: NatureProps) => {
+  return (
+    <motion.svg
+      width="100%"
+      height="10"
+      viewBox="0 0 100 10"
+      preserveAspectRatio="none"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.3, delay }}
+    >
+      <motion.path
+        d="M0 5 Q 25 2, 50 5 Q 75 8, 100 5"
+        stroke={color}
+        strokeWidth="2"
+        strokeLinecap="round"
+        fill="none"
+        initial={{ pathLength: 0 }}
+        animate={{ pathLength: 1 }}
+        transition={{ duration: 0.8, delay, ease: "easeInOut" }}
+      />
+      {/* Small leaves along the vine */}
+      <motion.path
+        d="M25 4 C 25 4, 28 0, 30 2"
+        stroke={color}
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        initial={{ pathLength: 0 }}
+        animate={{ pathLength: 1 }}
+        transition={{ duration: 0.3, delay: delay + 0.2 }}
+      />
+      <motion.path
+        d="M75 6 C 75 6, 72 10, 70 8"
+        stroke={color}
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        initial={{ pathLength: 0 }}
+        animate={{ pathLength: 1 }}
+        transition={{ duration: 0.3, delay: delay + 0.4 }}
+      />
+    </motion.svg>
+  );
+};
+
+export const LeafPattern = ({ className = "", delay = 0 }: NatureProps) => {
+  return (
+    <div
+      className={`absolute inset-0 z-0 opacity-[0.03] pointer-events-none overflow-hidden ${className}`}
+    >
+      <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern
+            id="leaf-pattern"
+            width="60"
+            height="60"
+            patternUnits="userSpaceOnUse"
+            patternTransform="rotate(30)"
+          >
+            <path
+              d="M30 0C30 0 35 15 45 20C55 25 55 10 45 5C35 0 30 0 30 0Z"
+              fill="currentColor"
+            />
+            <path
+              d="M0 30C0 30 5 45 15 50C25 55 25 40 15 35C5 30 0 30 0 30Z"
+              fill="currentColor"
+            />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#leaf-pattern)" />
+      </svg>
+    </div>
+  );
+};
+
+export const SmallSprout = ({
+  className = "",
+  delay = 0,
+  color = "currentColor",
+}: NatureProps) => {
+  return (
+    <motion.svg
+      width="30"
+      height="30"
+      viewBox="0 0 30 30"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+      initial={{ opacity: 0, scale: 0 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.5, delay: delay + 0.2, type: "spring" }}
+    >
+      <path
+        d="M5 25 Q 10 20, 15 10 Q 20 20, 25 25"
+        stroke={color}
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        fill="none"
+      />
+      <path
+        d="M15 10 C 15 10, 12 5, 10 7"
+        stroke={color}
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        fill="none"
+      />
+      <path
+        d="M15 10 C 15 10, 18 5, 20 7"
+        stroke={color}
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        fill="none"
+      />
+    </motion.svg>
+  );
+};

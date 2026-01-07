@@ -7,6 +7,7 @@ import Form from "../components/Form";
 import ComoFunciona from "../components/contacto/ComoFunciona.astro";
 import UbicacionYHorario from "../components/contacto/UbicacionYHorario.astro";
 import video from "../assets/videos/cita.mp4";
+import NatureCard from "../components/shared/NatureCard";
 ---
 
 <Layout
@@ -27,11 +28,9 @@ import video from "../assets/videos/cita.mp4";
     background="light"
   >
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-0">
-      <div
-        class="text-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg"
-      >
+      <NatureCard client:visible className="text-center">
         <div
-          class="inline-flex items-center justify-center w-16 h-16 bg-blue-100 dark:bg-primary-700 rounded-full mb-4"
+          class="inline-flex items-center justify-center w-16 h-16 bg-blue-100 dark:bg-primary-700 rounded-full mb-4 relative z-10"
         >
           <HiMail
             client:load
@@ -39,22 +38,22 @@ import video from "../assets/videos/cita.mp4";
             className="text-primary dark:text-primary-500"
           />
         </div>
-        <h3 class="text-xl font-bold mb-2 text-primary-700 dark:text-white">
+        <h3
+          class="text-xl font-bold mb-2 text-primary-700 dark:text-white relative z-10"
+        >
           Email
         </h3>
         <a
           href="mailto:e2.veroelizondo@gmail.com"
-          class="text-primary dark:text-primary-500 hover:underline"
+          class="text-primary dark:text-primary-500 hover:underline relative z-10"
         >
           e2.veroelizondo@gmail.com
         </a>
-      </div>
+      </NatureCard>
 
-      <div
-        class="text-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg"
-      >
+      <NatureCard client:visible className="text-center">
         <div
-          class="inline-flex items-center justify-center w-16 h-16 bg-blue-100 dark:bg-primary-700 rounded-full mb-4"
+          class="inline-flex items-center justify-center w-16 h-16 bg-blue-100 dark:bg-primary-700 rounded-full mb-4 relative z-10"
         >
           <HiPhone
             client:load
@@ -62,22 +61,22 @@ import video from "../assets/videos/cita.mp4";
             className="text-primary dark:text-primary-500"
           />
         </div>
-        <h3 class="text-xl font-bold mb-2 text-primary-700 dark:text-white">
+        <h3
+          class="text-xl font-bold mb-2 text-primary-700 dark:text-white relative z-10"
+        >
           Teléfono
         </h3>
         <a
           href="tel:+528120394143"
-          class="text-primary dark:text-primary-500 hover:underline"
+          class="text-primary dark:text-primary-500 hover:underline relative z-10"
         >
           +52 81 2039 4143
         </a>
-      </div>
+      </NatureCard>
 
-      <div
-        class="text-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg"
-      >
+      <NatureCard client:visible className="text-center">
         <div
-          class="inline-flex items-center justify-center w-16 h-16 bg-blue-100 dark:bg-primary-700 rounded-full mb-4"
+          class="inline-flex items-center justify-center w-16 h-16 bg-blue-100 dark:bg-primary-700 rounded-full mb-4 relative z-10"
         >
           <HiLocationMarker
             client:load
@@ -85,13 +84,15 @@ import video from "../assets/videos/cita.mp4";
             className="text-primary dark:text-primary-500"
           />
         </div>
-        <h3 class="text-xl font-bold mb-2 text-primary-700 dark:text-white">
+        <h3
+          class="text-xl font-bold mb-2 text-primary-700 dark:text-white relative z-10"
+        >
           Ubicación
         </h3>
-        <p class="text-gray-600 dark:text-gray-300">
+        <p class="text-gray-600 dark:text-gray-300 relative z-10">
           Calle Principal 123<br />Monterrey, Nuevo León
         </p>
-      </div>
+      </NatureCard>
     </div>
   </Section>
   <UbicacionYHorario />
