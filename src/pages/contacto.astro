@@ -8,6 +8,7 @@ import ComoFunciona from "../components/contacto/ComoFunciona.astro";
 import UbicacionYHorario from "../components/contacto/UbicacionYHorario.astro";
 import video from "../assets/videos/cita.mp4";
 import NatureCard from "../components/shared/NatureCard";
+import placeholderImage from "../assets/images/placeholderIMG/contact.webp";
 ---
 
 <Layout
@@ -19,6 +20,7 @@ import NatureCard from "../components/shared/NatureCard";
     title="Contáctanos"
     subtitle="¿Tienes preguntas? Estamos a tu entera disposición"
     videoSrc={video}
+    placeholder={placeholderImage.src}
   />
 
   <Section

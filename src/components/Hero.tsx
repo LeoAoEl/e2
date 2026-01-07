@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import NatureButton from "./shared/NatureButton";
-import { HiArrowRight } from "react-icons/hi";
-import placeholder from "../assets/images/placeholder.avif";
+import defaultPlaceholder from "../assets/images/placeholder.avif";
 
 interface HeroProps {
   title: string;
@@ -11,6 +10,7 @@ interface HeroProps {
   videoSrc?: string;
   showButton?: boolean;
   onlyTwo?: boolean;
+  placeholder?: string;
 }
 
 export default function Hero({
@@ -21,6 +21,7 @@ export default function Hero({
   videoSrc,
   showButton = false,
   onlyTwo = false,
+  placeholder,
 }: HeroProps) {
   const firstTwo = title.slice(0, 2);
   const restOfTitle = title.slice(2);
@@ -34,7 +35,7 @@ export default function Hero({
           loop
           muted
           playsInline
-          poster={placeholder.src}
+          poster={placeholder || defaultPlaceholder.src}
         >
           <source src={videoSrc} type="video/mp4" />
         </video>

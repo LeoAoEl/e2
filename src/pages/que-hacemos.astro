@@ -6,6 +6,7 @@ import Form from "../components/Form";
 import Hacemos from "../components/que-hacemos/Hacemos.astro";
 import ProcesoHumano from "../components/que-hacemos/ProcesoHumano";
 import video from "../assets/videos/conocenos.mp4";
+import placeholderImage from "../assets/images/placeholderIMG/queH.webp";
 ---
 
 <Layout
@@ -17,6 +18,7 @@ import video from "../assets/videos/conocenos.mp4";
     title="Qué Hacemos"
     subtitle="Ponemos tu vida en marcha"
     videoSrc={video}
+    placeholder={placeholderImage.src}
   />
 
   <ProcesoHumano client:visible />
