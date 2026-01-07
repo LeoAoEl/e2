@@ -115,7 +115,7 @@ export default function Hero({
 
             {showButton && (
               <a
-                href="/contacto#formulario-contacto"
+                href="/contacto#formulario"
                 className="px-8 py-4 cursor-pointer text-lg bg-secondary text-white font-bold rounded-full hover:bg-secondary-600 transition-all shadow-lg hover:shadow-xl hover:scale-105"
               >
                 Agenda una Cita

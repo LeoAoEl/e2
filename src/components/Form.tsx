@@ -32,7 +32,7 @@ export default function Form() {
 
   return (
     <div
-      id="formulario-contacto"
+      id="formulario"
       className="relative w-full py-20 bg-fixed bg-cover bg-center"
       style={{
         backgroundImage:

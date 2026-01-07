@@ -23,6 +23,6 @@ export const testimoniosData: Testimonio[] = [
     imagen: Alfredo,
     ocupacion: "Trabajador de la construcción (trabajos en alturas)",
     testimonio:
-      "A los 19 contraté un seguro por prevención. Tras una caída de 9 m, fui atendido de inmediato en hospital en red. Mi agente Vero Elizondo me acompañó en todo. Me operaron columna y pie, y el seguro cubrió casi todo; solo pagué deducible. Hoy sigo recibiendo apoyo. Fue la mejor decisión.",
+      "A los 19 contraté un seguro por prevención. Tras una caída de 9 m, fui atendido de inmediato en hospital en red. El equipo de E2 me acompañó en todo. Me operaron columna y pie, y el seguro cubrió casi todo; solo pagué deducible. Hoy sigo recibiendo apoyo. Fue la mejor decisión.",
   },
 ];
