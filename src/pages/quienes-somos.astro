@@ -4,7 +4,7 @@ import Hero from "../components/Hero";
 import Section from "../components/Section";
 import Card from "../components/Card";
 import { getCollection } from "astro:content";
-import Principios from "../components/quienes-somos/Principios.astro";
+import PrincipiosSlider from "../components/quienes-somos/PrincipiosSlider";
 import Values from "../components/quienes-somos/Values";
 import video from "../assets/videos/quienes.mp4";
 
@@ -25,11 +25,10 @@ const teamMembers = await getCollection("team");
   <!-- Pilares  -->
   <Section
     client:load
-    title="Nuestra Historia"
-    subtitle="Más de 10 años poniendo vidas en marcha"
-    background="light"
+    title="Nuestros Principios"
+    subtitle="La base de todo lo que hacemos"
   >
-    <Principios />
+    <PrincipiosSlider client:visible />
   </Section>
 
   <!-- Valores  -->
