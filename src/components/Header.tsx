@@ -75,7 +75,7 @@ export default function Header() {
             <img
               src={LogoW.src}
               alt="Logo"
-              className="w-full h-auto drop-shadow-lg"
+              className="md:w-48 w-32 h-auto drop-shadow-lg py-4"
             />
           </a>
 

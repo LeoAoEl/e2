@@ -48,7 +48,7 @@ export default function Section({
       )}
 
       {/* Overlay for Background Image */}
-      {ifBg && <div className="absolute inset-0 bg-black/20 z-0" />}
+      {ifBg && <div className="absolute inset-0 bg-black/40 z-0" />}
 
       <div className="container mx-auto px-4 relative z-10">
         {(title || subtitle) && (
@@ -62,7 +62,7 @@ export default function Section({
                   viewport={{ once: true }}
                   transition={{ duration: 0.8, delay: 0.2 }}
                   className={`absolute -top-6 -left-8 rotate-180 z-0 ${
-                    ifBg ? "text-white/30" : "text-secondary/30"
+                    ifBg ? "text-secondary" : "text-secondary"
                   }`}
                 >
                   <Vine className="w-16 h-8" delay={0.5} />
@@ -74,7 +74,7 @@ export default function Section({
                   viewport={{ once: true }}
                   transition={{ duration: 0.8, ease: "easeOut" }}
                   className={`relative z-10 text-4xl md:text-5xl font-bold mb-4 inline-block ${
-                    ifBg ? "text-white" : "text-secondary"
+                    ifBg ? "text-secondary" : "text-secondary"
                   }`}
                 >
                   {title}
@@ -86,7 +86,7 @@ export default function Section({
                   viewport={{ once: true }}
                   transition={{ duration: 0.8, delay: 0.4 }}
                   className={`absolute -bottom-2 -right-10 z-0 ${
-                    ifBg ? "text-white/30" : "text-secondary/30"
+                    ifBg ? "text-secondary" : "text-secondary"
                   }`}
                 >
                   <Vine className="w-20 h-8" delay={0.7} />
