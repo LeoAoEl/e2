@@ -1,6 +1,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { motion } from "framer-motion";
+import NatureButton from "./shared/NatureButton";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -73,15 +74,12 @@ export default function Slider({ videoSrc, slides }: SliderProps) {
                 </motion.h2>
 
                 {slide.buttonText && slide.buttonRef && (
-                  <motion.a
+                  <NatureButton
                     href={slide.buttonRef}
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.5, delay: 0.6 }}
-                    className="px-8 py-3 bg-secondary text-white font-semibold rounded-full hover:bg-secondary-600 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                    className="font-semibold"
                   >
                     {slide.buttonText}
-                  </motion.a>
+                  </NatureButton>
                 )}
               </div>
             </SwiperSlide>
