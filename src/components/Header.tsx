@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { HiMenu, HiX } from "react-icons/hi";
 import LogoW from "../assets/images/LogoW.svg";
+import leaf from "../assets/images/leaf.svg";
 import ThemeToggle from "./shared/ThemeToggle";
 import { VineUnderline } from "./shared/NatureDecoration";
 
@@ -88,12 +89,17 @@ export default function Header() {
                 <a
                   key={item.name}
                   href={item.href}
-                  className={`relative group flex items-center gap-1 hover:text-secondary hover:scale-105 transition-all ease-in font-medium hover:opacity-100 px-1 py-1 ${
+                  className={`relative group flex items-center justify-center gap-1 hover:text-secondary hover:scale-105 transition-all ease-in font-medium hover:opacity-100 px-3 py-1 ${
                     isScrolled
                       ? "text-gray-700 dark:text-gray-200"
                       : "text-white drop-shadow-lg"
                   }`}
                 >
+                  <img
+                    src={leaf.src}
+                    alt=""
+                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 opacity-0 group-hover:opacity-30 transition-opacity duration-300 pointer-events-none -z-10 "
+                  />
                   <span className="relative z-10">{item.name}</span>
                   {isActive && (
                     <div className="absolute left-0 right-0 -bottom-2 h-3">
