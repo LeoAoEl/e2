@@ -1,11 +1,8 @@
 import { motion } from "framer-motion";
 import { HiLightBulb, HiUsers, HiChartBar } from "react-icons/hi";
-import {
-  BranchCorner,
-  LeafPattern,
-  SmallSprout,
-  Grass,
-} from "./shared/NatureDecoration";
+import { LeafPattern, SmallSprout, Grass } from "./shared/NatureDecoration";
+
+import leaf from "../assets/images/leaf.svg";
 
 interface ServiceCardProps {
   title: string;
@@ -36,7 +33,11 @@ export default function ServiceCard({
     >
       {/* Woodsy/Nature decorative corner */}
       <div className="absolute top-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
-        <BranchCorner className="w-24 h-24 text-secondary/40" delay={0} />
+        <img
+          src={leaf.src}
+          alt=""
+          className="w-24 h-24 text-secondary/40 transform rotate-180"
+        />
       </div>
 
       <LeafPattern className="text-primary-900 dark:text-white" />

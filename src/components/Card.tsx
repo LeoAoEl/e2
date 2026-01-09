@@ -1,11 +1,8 @@
 import { motion } from "framer-motion";
 import type { ReactNode } from "react";
-import {
-  BranchCorner,
-  LeafPattern,
-  SmallSprout,
-  Grass,
-} from "./shared/NatureDecoration";
+import { LeafPattern, SmallSprout, Grass } from "./shared/NatureDecoration";
+
+import leaf from "../assets/images/leaf.svg";
 
 interface CardProps {
   title: string;
@@ -30,7 +27,11 @@ interface CardProps {
 const NatureDecorations = () => (
   <>
     <div className="absolute top-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-20">
-      <BranchCorner className="w-20 h-20 text-secondary/40" delay={0} />
+      <img
+        src={leaf.src}
+        alt=""
+        className="w-20 h-20 text-secondary/40 transform rotate-180"
+      />
     </div>
 
     <LeafPattern className="text-primary-900 dark:text-white" />
