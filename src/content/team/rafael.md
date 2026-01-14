@@ -1,11 +1,13 @@
 ---
 name: "Rafael Esquer"
-description: "CEO & Fundador"
+description: "Socio Fundador · Estratega Patrimonial"
 image: "./images/him2.jpeg"
 ---
 
-Rafael Esquer lidera la estrategia tecnológica de E2 Estrategias Patrimoniales. Como Director de Tecnología, es responsable de implementar soluciones innovadoras que mejoran la experiencia de nuestros clientes y optimizan nuestros procesos internos.
+Buko es cofundador de <b>E2 Estrategias Patrimoniales</b> y especialista en el diseño de proyectos financieros que las personas puedan disfrutar en vida. Su enfoque parte de una idea simple pero poderosa: <b>el dinero y los seguros no deberían vivirse desde el miedo, sino desde la tranquilidad y la libertad.</b>
 
-Con una sólida formación en ingeniería de software y gestión de proyectos, Rafael se asegura de que nuestra infraestructura digital sea segura, eficiente y esté siempre a la vanguardia.
+A lo largo de su trayectoria ha acompañado a familias, profesionistas y empresarios a construir planes que protegen lo que más importa: su salud, su patrimonio y su futuro. Su estilo es claro, honesto y cercano; Buko se asegura de que cada cliente entienda exactamente qué está contratando y por qué.
 
-Su enfoque en la transformación digital ha permitido a la empresa ofrecer servicios más ágiles y accesibles, facilitando la vida de nuestros asegurados.
+Más que vender productos, Buko diseña estrategias que se adaptan a cada etapa de la vida: desde la protección por incapacidad, los seguros de vida y los gastos médicos mayores, hasta el retiro y los planes educativos.
+
+Para él, una buena planeación patrimonial no es un lujo, es una forma de cuidar a quienes amas.

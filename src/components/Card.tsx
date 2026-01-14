@@ -63,7 +63,6 @@ const CardContent = ({
         <img
           src={image}
           alt={title}
-          // Se agrega ${imagePosition} a las clases
           className={`w-full h-full object-cover transition-transform duration-300 group-hover:scale-110 ${imagePosition}`}
           style={
             transitionNameImage
@@ -87,7 +86,9 @@ const CardContent = ({
       >
         {title}
       </h3>
-      <p className="text-gray-600 dark:text-gray-300">{description}</p>
+      <p className="text-gray-600 dark:text-gray-300 line-clamp-2 max-w-xs">
+        {description}
+      </p>
     </div>
   </>
 );
