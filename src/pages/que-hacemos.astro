@@ -7,6 +7,7 @@ import Hacemos from "../components/que-hacemos/Hacemos.astro";
 import ProcesoHumano from "../components/que-hacemos/ProcesoHumano";
 import video from "../assets/videos/conocenos.mp4";
 import placeholderImage from "../assets/images/placeholderIMG/queH.webp";
+import Reconocimientos from "../components/shared/Reconocimientos";
 ---
 
 <Layout
@@ -34,5 +35,6 @@ import placeholderImage from "../assets/images/placeholderIMG/queH.webp";
       <Hacemos />
     </div>
   </Section>
+  <Reconocimientos client:visible />
   <Form client:visible />
 </Layout>

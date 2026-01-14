@@ -10,6 +10,7 @@ import HomeVideo from "../assets/videos/homeBanner.mp4";
 import Elegirnos from "../components/Home/Elegirnos.astro";
 import Testimonios from "../components/Home/Testimonios";
 import video from "../assets/videos/realHome.mp4";
+import Reconocimientos from "../components/shared/Reconocimientos";
 ---
 
 <Layout
@@ -57,6 +58,7 @@ import video from "../assets/videos/realHome.mp4";
     </div>
   </Section>
   <Slider client:visible videoSrc={HomeVideo} slides={sliderData} />
+  <Reconocimientos client:visible />
 
   <Elegirnos />
   <Testimonios client:visible />
