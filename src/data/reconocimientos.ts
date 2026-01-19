@@ -15,7 +15,7 @@ export interface Achievement {
 export const achievements: Achievement[] = [
   {
     id: 1,
-    title: "Miembro MDRT Elite",
+    title: "Miembros MDRT Elite",
     description:
       "8 años consecutivos en la Million Dollar Round Table, la élite global en servicios financieros.",
     image: mdrtImage,
@@ -27,11 +27,11 @@ export const achievements: Achievement[] = [
     description:
       "Reconocimiento de alto prestigio por compromiso y excelencia en protección patrimonial.",
     image: legionImage,
-    badge: "Asesor de Élite",
+    badge: "Asesores de Élite",
   },
   {
     id: 3,
-    title: "Miembro Atlantis",
+    title: "Miembros Atlantis",
     description:
       "Distinción para el grupo selecto de asesores con mayor rendimiento y capacitación continua.",
     image: atlantisImage,
@@ -40,14 +40,13 @@ export const achievements: Achievement[] = [
   {
     id: 4,
     title: "Convención Diamante",
-    description:
-      "Invitada exclusiva por figurar entre los mejores asesores de seguros a nivel nacional.",
+    description: "Reconocimiento para los mejores asesores a nivel nacional.",
     image: diamanteImage,
     badge: "Top Nacional",
   },
   {
     id: 5,
-    title: "Campeona Nacional",
+    title: "Campeonato Nacional",
     description:
       "Mención honorífica y primer lugar nacional en su generación de graduación profesional.",
     image: campeonatoImage,

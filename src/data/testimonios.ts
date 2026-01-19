@@ -25,6 +25,6 @@ export const testimoniosData: Testimonio[] = [
     imagen: Alfredo,
     ocupacion: "Trabajador de la construcción (trabajos en alturas)",
     testimonio:
-      "A los 19 contraté un seguro por prevención. Tras una caída de 9 m, fui atendido de inmediato en hospital en red. El equipo de E2 me acompañó en todo. Me operaron columna y pie, y el seguro cubrió casi todo; solo pagué deducible. Hoy sigo recibiendo apoyo. Fue la mejor decisión.",
+      "A los 19 contraté un seguro por prevención, pues trabajo en la construcción de bodegas, en altura. Tras una caída de 9 m, fui atendido de inmediato en uno de los mejores hospitales de Monterrey. El equipo de E2 me acompañó en todo, me operaron columna y pie, y el seguro cubrió todos los gastos. Hoy sigo recibiendo apoyo, haber contratado mi Seguro de Gastos Médicos fue la mejor decisión, y hacerlo con E2 un gran acierto.",
   },
 ];

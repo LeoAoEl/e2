@@ -6,6 +6,7 @@ import PostCard from "../components/PostCard.astro";
 import video from "../assets/videos/eventos2.mp4";
 import { getCollection, type CollectionEntry } from "astro:content";
 import placeholderImage from "../assets/images/placeholderIMG/eventos.webp";
+import Soon from "../components/shared/Soon.astro";
 
 const events = await getCollection("eventos");
 const now = new Date();
@@ -13,13 +14,13 @@ const upcomingEvents: CollectionEntry<"eventos">[] = events
   .filter((e: CollectionEntry<"eventos">) => e.data.date >= now)
   .sort(
     (a: CollectionEntry<"eventos">, b: CollectionEntry<"eventos">) =>
-      a.data.date.valueOf() - b.data.date.valueOf()
+      a.data.date.valueOf() - b.data.date.valueOf(),
   );
 const pastEvents: CollectionEntry<"eventos">[] = events
   .filter((e: CollectionEntry<"eventos">) => e.data.date < now)
   .sort(
     (a: CollectionEntry<"eventos">, b: CollectionEntry<"eventos">) =>
-      b.data.date.valueOf() - a.data.date.valueOf()
+      b.data.date.valueOf() - a.data.date.valueOf(),
   );
 ---
 
@@ -27,7 +28,8 @@ const pastEvents: CollectionEntry<"eventos">[] = events
   title="Eventos - E2TRATEGIAS PATRIMONIALES"
   description="Próximos eventos y actividades"
 >
-  <Hero
+  <Soon />
+  <!-- <Hero
     client:load
     title="Eventos"
     subtitle="Únete a nuestras actividades y talleres"
@@ -75,5 +77,5 @@ const pastEvents: CollectionEntry<"eventos">[] = events
         ))
       }
     </div>
-  </Section>
+  </Section> -->
 </Layout>
