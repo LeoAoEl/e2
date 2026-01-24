@@ -47,8 +47,7 @@ export const achievements: Achievement[] = [
   {
     id: 5,
     title: "Campeonato Nacional",
-    description:
-      "Mención honorífica y primer lugar nacional en su generación de graduación profesional.",
+    description: "Campeonato nacional de generación y mención honorífica.",
     image: campeonatoImage,
     badge: "Mención Honorífica",
   },
