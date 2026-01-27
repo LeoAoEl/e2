@@ -112,6 +112,15 @@ export default function PrincipiosSlider() {
                   <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-8">
                     {slide.content}
                   </p>
+
+                  {slide.button && slide.link && (
+                    <a
+                      href={slide.link}
+                      className="px-8 py-4 cursor-pointer dark:bg-secondary-900/30 text-lg bg-primary text-secondary font-bold rounded-3xl transition-all shadow-lg hover:shadow-xl hover:scale-105 inline-block"
+                    >
+                      {slide.button}
+                    </a>
+                  )}
                 </motion.div>
               </div>
 
@@ -126,8 +135,6 @@ export default function PrincipiosSlider() {
                   alt={slide.title}
                   className="absolute inset-0 w-full h-full object-cover"
                 />
-
-                {/* Text Overlay on Image (Mobile only or for effect) */}
                 <div className="absolute bottom-0 left-0 right-0 p-6 bg-linear-to-t from-black/80 to-transparent z-20 lg:hidden">
                   <p className="text-white/90 text-sm font-medium">
                     Estrategias Patrimoniales

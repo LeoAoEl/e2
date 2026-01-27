@@ -40,7 +40,7 @@ export const principios: PrincipiosE2 = {
     image:
       "https://images.unsplash.com/photo-1502082553048-f009c37129b9?q=80&w=2670&auto=format&fit=crop",
     button: "Contactanos",
-    link: "/contacto#formulario",
+    link: "/contacto",
   },
 };
 
