@@ -39,7 +39,7 @@ export const principios: PrincipiosE2 = {
     text: "E2 es más que un despacho de seguros: es tu aliado para diseñar un proyecto de vida con visión, protección y futuro. ¿Qué esperas? Déjanos ayudarte a disfrutar tu vida.",
     image:
       "https://images.unsplash.com/photo-1502082553048-f009c37129b9?q=80&w=2670&auto=format&fit=crop",
-    button: "Contactanos",
+    button: "Contáctanos",
     link: "/contacto",
   },
 };
