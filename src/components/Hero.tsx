@@ -8,6 +8,7 @@ interface HeroProps {
   ctaText?: string;
   ctaLink?: string;
   videoSrc?: string;
+  isSecondSubtitle?: boolean;
   showButton?: boolean;
   onlyTwo?: boolean;
   placeholder?: string;
@@ -21,6 +22,7 @@ export default function Hero({
   videoSrc,
   showButton = false,
   onlyTwo = false,
+  isSecondSubtitle = false,
   placeholder,
 }: HeroProps) {
   const firstTwo = title.slice(0, 2);
@@ -94,7 +96,7 @@ export default function Hero({
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto drop-shadow-lg"
+          className="text-xl md:text-3xl mb-8 max-w-3xl mx-auto drop-shadow-lg"
         >
           {subtitle}
         </motion.p>
@@ -122,6 +124,19 @@ export default function Hero({
               </a>
             )}
           </motion.div>
+        )}
+
+        {isSecondSubtitle && (
+          <div className="mt-30">
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-xl italic md:text-3xl mb-8 max-w-3xl mx-auto drop-shadow-lg"
+            >
+              Toma el control de tu vida…nosotros te ayudamos
+            </motion.p>
+          </div>
         )}
       </div>
 

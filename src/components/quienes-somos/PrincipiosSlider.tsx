@@ -39,6 +39,8 @@ export default function PrincipiosSlider() {
       content: principios.tuFuturo.text,
       image: principios.tuFuturo.image,
       subtitle: "Cosechando tranquilidad",
+      button: principios.tuFuturo.button,
+      link: principios.tuFuturo.link,
     },
   ];
 

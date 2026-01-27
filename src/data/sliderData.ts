@@ -1,6 +1,6 @@
 export const sliderData = [
   {
-    title: "Somos una empresa que busca ayudarte a disfrutar tu vida",
+    title: "Te ayudaremos a disfrutar todas las etapas de tu vida",
     buttonText: "Conoce más",
     buttonRef: "/que-hacemos",
   },
