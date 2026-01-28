@@ -13,11 +13,11 @@ const Reconocimientos = () => {
   return (
     <Section
       title="Nuestros Reconocimientos"
-      subtitle="Algunos de los reconocimientos que avalan nuestra trayectoria y compromiso con la excelencia en el sector financiero"
+      subtitle="Cada reconocimiento refleja la confianza que nuestros clientes y asegurados han depositado en nosotros. Y nos impulsa a seguir brindando un servicio de excelencia."
       background="dark"
       className="overflow-visible! py-40"
     >
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto md:mt-20 px-4 relative z-10">
         <div className="absolute top-10 left-0 opacity-10 pointer-events-none hidden lg:block rotate-45">
           <img
             src={leafImage.src}
